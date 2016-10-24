@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SDBatchToolsGUI", "SDBatchToolsGUI\SDBatchToolsGUI.csproj", "{96E1A19A-948B-4BDE-BCA4-A951D0FC7691}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SDBatchToolsHelper", "SDBatchToolsHelper\SDBatchToolsHelper.csproj", "{FF642B31-FC08-4F98-AFF9-41134D68F141}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{96E1A19A-948B-4BDE-BCA4-A951D0FC7691}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96E1A19A-948B-4BDE-BCA4-A951D0FC7691}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96E1A19A-948B-4BDE-BCA4-A951D0FC7691}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96E1A19A-948B-4BDE-BCA4-A951D0FC7691}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF642B31-FC08-4F98-AFF9-41134D68F141}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF642B31-FC08-4F98-AFF9-41134D68F141}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF642B31-FC08-4F98-AFF9-41134D68F141}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF642B31-FC08-4F98-AFF9-41134D68F141}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
