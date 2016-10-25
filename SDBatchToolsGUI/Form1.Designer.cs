@@ -29,6 +29,13 @@
         private void InitializeComponent()
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exportOutputToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exportAsBATToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.openOutputFolderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.stripitem_settings = new System.Windows.Forms.ToolStripMenuItem();
             this.clearOutputToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.killProcessToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -43,6 +50,7 @@
             this.btn_mutator_help = new System.Windows.Forms.Button();
             this.btn_mutator_version = new System.Windows.Forms.Button();
             this.tab_render = new System.Windows.Forms.TabPage();
+            this.btn_render_open_output = new System.Windows.Forms.Button();
             this.txt_render_values = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.txt_render_pixel_size = new System.Windows.Forms.TextBox();
@@ -87,11 +95,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txt_preview = new System.Windows.Forms.TextBox();
             this.btn_run = new System.Windows.Forms.Button();
-            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exportOutputToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exportAsBATToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.tab_manager.SuspendLayout();
             this.tab_baker.SuspendLayout();
@@ -114,6 +117,57 @@
             this.menuStrip1.Size = new System.Drawing.Size(858, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
+            // 
+            // fileToolStripMenuItem
+            // 
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.exportOutputToolStripMenuItem,
+            this.exportAsBATToolStripMenuItem,
+            this.toolStripSeparator2,
+            this.openOutputFolderToolStripMenuItem,
+            this.toolStripSeparator1,
+            this.exitToolStripMenuItem});
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Text = "File";
+            // 
+            // exportOutputToolStripMenuItem
+            // 
+            this.exportOutputToolStripMenuItem.Name = "exportOutputToolStripMenuItem";
+            this.exportOutputToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exportOutputToolStripMenuItem.Text = "Save Output";
+            this.exportOutputToolStripMenuItem.Click += new System.EventHandler(this.exportOutputToolStripMenuItem_Click);
+            // 
+            // exportAsBATToolStripMenuItem
+            // 
+            this.exportAsBATToolStripMenuItem.Name = "exportAsBATToolStripMenuItem";
+            this.exportAsBATToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exportAsBATToolStripMenuItem.Text = "Export as BAT";
+            this.exportAsBATToolStripMenuItem.Click += new System.EventHandler(this.exportAsBATToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(177, 6);
+            // 
+            // openOutputFolderToolStripMenuItem
+            // 
+            this.openOutputFolderToolStripMenuItem.Name = "openOutputFolderToolStripMenuItem";
+            this.openOutputFolderToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.openOutputFolderToolStripMenuItem.Text = "Open Output Folder";
+            this.openOutputFolderToolStripMenuItem.Click += new System.EventHandler(this.openOutputFolderToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // stripitem_settings
             // 
@@ -249,6 +303,7 @@
             // 
             // tab_render
             // 
+            this.tab_render.Controls.Add(this.btn_render_open_output);
             this.tab_render.Controls.Add(this.txt_render_values);
             this.tab_render.Controls.Add(this.label17);
             this.tab_render.Controls.Add(this.txt_render_pixel_size);
@@ -294,9 +349,18 @@
             this.tab_render.Text = "sbsrender";
             this.tab_render.UseVisualStyleBackColor = true;
             // 
+            // btn_render_open_output
+            // 
+            this.btn_render_open_output.Location = new System.Drawing.Point(197, 233);
+            this.btn_render_open_output.Name = "btn_render_open_output";
+            this.btn_render_open_output.Size = new System.Drawing.Size(302, 23);
+            this.btn_render_open_output.TabIndex = 39;
+            this.btn_render_open_output.Text = "Open Output Folder";
+            this.btn_render_open_output.UseVisualStyleBackColor = true;
+            // 
             // txt_render_values
             // 
-            this.txt_render_values.Location = new System.Drawing.Point(277, 177);
+            this.txt_render_values.Location = new System.Drawing.Point(277, 159);
             this.txt_render_values.Name = "txt_render_values";
             this.txt_render_values.Size = new System.Drawing.Size(543, 20);
             this.txt_render_values.TabIndex = 38;
@@ -305,7 +369,7 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(194, 181);
+            this.label17.Location = new System.Drawing.Point(194, 163);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(61, 13);
             this.label17.TabIndex = 37;
@@ -313,7 +377,7 @@
             // 
             // txt_render_pixel_size
             // 
-            this.txt_render_pixel_size.Location = new System.Drawing.Point(564, 233);
+            this.txt_render_pixel_size.Location = new System.Drawing.Point(564, 185);
             this.txt_render_pixel_size.Name = "txt_render_pixel_size";
             this.txt_render_pixel_size.Size = new System.Drawing.Size(256, 20);
             this.txt_render_pixel_size.TabIndex = 36;
@@ -322,7 +386,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(505, 236);
+            this.label16.Location = new System.Drawing.Point(505, 188);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(53, 13);
             this.label16.TabIndex = 35;
@@ -330,7 +394,7 @@
             // 
             // txt_render_output_size
             // 
-            this.txt_render_output_size.Location = new System.Drawing.Point(277, 233);
+            this.txt_render_output_size.Location = new System.Drawing.Point(277, 185);
             this.txt_render_output_size.Name = "txt_render_output_size";
             this.txt_render_output_size.Size = new System.Drawing.Size(222, 20);
             this.txt_render_output_size.TabIndex = 34;
@@ -339,7 +403,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(194, 236);
+            this.label15.Location = new System.Drawing.Point(194, 188);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(60, 13);
             this.label15.TabIndex = 33;
@@ -348,7 +412,7 @@
             // btn_render_entry_path_select
             // 
             this.btn_render_entry_path_select.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_render_entry_path_select.Location = new System.Drawing.Point(788, 144);
+            this.btn_render_entry_path_select.Location = new System.Drawing.Point(788, 126);
             this.btn_render_entry_path_select.Name = "btn_render_entry_path_select";
             this.btn_render_entry_path_select.Size = new System.Drawing.Size(32, 21);
             this.btn_render_entry_path_select.TabIndex = 32;
@@ -360,7 +424,7 @@
             // 
             this.txt_render_entry_path.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_render_entry_path.Location = new System.Drawing.Point(538, 145);
+            this.txt_render_entry_path.Location = new System.Drawing.Point(538, 127);
             this.txt_render_entry_path.Name = "txt_render_entry_path";
             this.txt_render_entry_path.Size = new System.Drawing.Size(244, 20);
             this.txt_render_entry_path.TabIndex = 31;
@@ -369,7 +433,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(514, 148);
+            this.label14.Location = new System.Drawing.Point(514, 130);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(18, 13);
             this.label14.TabIndex = 30;
@@ -377,7 +441,7 @@
             // 
             // txt_render_entry_id
             // 
-            this.txt_render_entry_id.Location = new System.Drawing.Point(277, 145);
+            this.txt_render_entry_id.Location = new System.Drawing.Point(277, 127);
             this.txt_render_entry_id.Name = "txt_render_entry_id";
             this.txt_render_entry_id.Size = new System.Drawing.Size(231, 20);
             this.txt_render_entry_id.TabIndex = 29;
@@ -386,7 +450,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(194, 149);
+            this.label13.Location = new System.Drawing.Point(194, 131);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(68, 13);
             this.label13.TabIndex = 28;
@@ -412,7 +476,7 @@
             // btn_render_output_name_build
             // 
             this.btn_render_output_name_build.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_render_output_name_build.Location = new System.Drawing.Point(767, 79);
+            this.btn_render_output_name_build.Location = new System.Drawing.Point(767, 61);
             this.btn_render_output_name_build.Name = "btn_render_output_name_build";
             this.btn_render_output_name_build.Size = new System.Drawing.Size(53, 20);
             this.btn_render_output_name_build.TabIndex = 25;
@@ -424,7 +488,7 @@
             // 
             this.txt_render_output_name.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_render_output_name.Location = new System.Drawing.Point(277, 79);
+            this.txt_render_output_name.Location = new System.Drawing.Point(277, 61);
             this.txt_render_output_name.Name = "txt_render_output_name";
             this.txt_render_output_name.Size = new System.Drawing.Size(487, 20);
             this.txt_render_output_name.TabIndex = 24;
@@ -433,7 +497,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(194, 83);
+            this.label11.Location = new System.Drawing.Point(194, 65);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(73, 13);
             this.label11.TabIndex = 23;
@@ -443,7 +507,7 @@
             // 
             this.txt_render_graph_output.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_render_graph_output.Location = new System.Drawing.Point(600, 111);
+            this.txt_render_graph_output.Location = new System.Drawing.Point(600, 93);
             this.txt_render_graph_output.Name = "txt_render_graph_output";
             this.txt_render_graph_output.Size = new System.Drawing.Size(220, 20);
             this.txt_render_graph_output.TabIndex = 22;
@@ -454,7 +518,7 @@
             this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(514, 114);
+            this.label10.Location = new System.Drawing.Point(514, 96);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(80, 13);
             this.label10.TabIndex = 21;
@@ -462,7 +526,7 @@
             // 
             // txt_render_graph
             // 
-            this.txt_render_graph.Location = new System.Drawing.Point(277, 110);
+            this.txt_render_graph.Location = new System.Drawing.Point(277, 92);
             this.txt_render_graph.Name = "txt_render_graph";
             this.txt_render_graph.Size = new System.Drawing.Size(231, 20);
             this.txt_render_graph.TabIndex = 20;
@@ -471,7 +535,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(194, 114);
+            this.label9.Location = new System.Drawing.Point(194, 96);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(77, 13);
             this.label9.TabIndex = 19;
@@ -601,7 +665,7 @@
             // btn_render_output_select
             // 
             this.btn_render_output_select.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_render_output_select.Location = new System.Drawing.Point(788, 51);
+            this.btn_render_output_select.Location = new System.Drawing.Point(788, 34);
             this.btn_render_output_select.Name = "btn_render_output_select";
             this.btn_render_output_select.Size = new System.Drawing.Size(32, 20);
             this.btn_render_output_select.TabIndex = 10;
@@ -613,15 +677,16 @@
             // 
             this.txt_render_output.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_render_output.Location = new System.Drawing.Point(277, 52);
+            this.txt_render_output.Location = new System.Drawing.Point(277, 35);
             this.txt_render_output.Name = "txt_render_output";
             this.txt_render_output.Size = new System.Drawing.Size(504, 20);
             this.txt_render_output.TabIndex = 9;
+            this.txt_render_output.TextChanged += new System.EventHandler(this.txt_render_output_TextChanged);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(194, 55);
+            this.label4.Location = new System.Drawing.Point(194, 38);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(67, 13);
             this.label4.TabIndex = 8;
@@ -657,6 +722,7 @@
             this.txt_render_input.Name = "txt_render_input";
             this.txt_render_input.Size = new System.Drawing.Size(505, 20);
             this.txt_render_input.TabIndex = 5;
+            this.txt_render_input.TextChanged += new System.EventHandler(this.txt_render_input_TextChanged);
             // 
             // group_render_mode
             // 
@@ -766,43 +832,6 @@
             this.btn_run.UseVisualStyleBackColor = true;
             this.btn_run.Click += new System.EventHandler(this.btn_run_Click);
             // 
-            // fileToolStripMenuItem
-            // 
-            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.exportOutputToolStripMenuItem,
-            this.exportAsBATToolStripMenuItem,
-            this.toolStripSeparator1,
-            this.exitToolStripMenuItem});
-            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
-            this.fileToolStripMenuItem.Text = "File";
-            // 
-            // exportOutputToolStripMenuItem
-            // 
-            this.exportOutputToolStripMenuItem.Name = "exportOutputToolStripMenuItem";
-            this.exportOutputToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.exportOutputToolStripMenuItem.Text = "Save Output";
-            this.exportOutputToolStripMenuItem.Click += new System.EventHandler(this.exportOutputToolStripMenuItem_Click);
-            // 
-            // exportAsBATToolStripMenuItem
-            // 
-            this.exportAsBATToolStripMenuItem.Name = "exportAsBATToolStripMenuItem";
-            this.exportAsBATToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.exportAsBATToolStripMenuItem.Text = "Export as BAT";
-            this.exportAsBATToolStripMenuItem.Click += new System.EventHandler(this.exportAsBATToolStripMenuItem_Click);
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
-            // 
-            // exitToolStripMenuItem
-            // 
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.exitToolStripMenuItem.Text = "Exit";
-            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -901,6 +930,9 @@
         private System.Windows.Forms.ToolStripMenuItem exportAsBATToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        private System.Windows.Forms.Button btn_render_open_output;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripMenuItem openOutputFolderToolStripMenuItem;
     }
 }
 

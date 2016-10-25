@@ -132,7 +132,7 @@ namespace SDBatchToolsHelper
                     s += " --output-name " + OutputName;
 
                 if (OutputPath != "")
-                    s += "--output-path " + OutputPath;
+                    s += " --output-path " + OutputPath;
 
                 if (OutputFormat != RenderOutputFormat.unset)
                     s += " --output-format " + OutputFormat.ToString();

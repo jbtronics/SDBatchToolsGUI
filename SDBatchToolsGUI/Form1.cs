@@ -416,6 +416,18 @@ namespace SDBatchToolsGUI
             updateCMDLine(_sbsrender);
         }
 
+        private void txt_render_input_TextChanged(object sender, EventArgs e)
+        {
+            _sbsrender.InputFile = txt_render_input.Text;
+            updateCMDLine(_sbsrender);
+        }
+
+        private void txt_render_output_TextChanged(object sender, EventArgs e)
+        {
+            _sbsrender.OutputPath = txt_render_output.Text;
+            updateCMDLine(_sbsrender);
+        }
+
         #endregion
 
         #region Toolstrip
@@ -473,10 +485,37 @@ namespace SDBatchToolsGUI
             new Settings().Show();
         }
 
+        private void openOutputFolderToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            switch (tab_manager.SelectedTab.Text)
+            {
+                case "sbsrender":
+                    if (_sbsrender.OutputPath != "")
+                    {
+                        Process.Start("explorer.exe", _sbsrender.OutputPath);
+                    }
+                    break;
+                case "sbsmutator":
+                    
+                    break;
+                case "sbscooker":
+                    
+                    break;
+                case "sbsbaker":
+
+                    break;
+            }
+
+            
+        }
+
+
+
+
+
         #endregion
 
-       
-
-       
+        
     }
 }
