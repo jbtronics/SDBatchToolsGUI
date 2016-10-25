@@ -44,6 +44,18 @@
             this.btn_baker_help = new System.Windows.Forms.Button();
             this.btn_baker_version = new System.Windows.Forms.Button();
             this.tab_cooker = new System.Windows.Forms.TabPage();
+            this.btn_cooker_output_folder = new System.Windows.Forms.Button();
+            this.txt_cooker_output_folder = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.btn_cooker_input_select = new System.Windows.Forms.Button();
+            this.txt_cooker_input = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.check_cooker_archive = new System.Windows.Forms.CheckBox();
+            this.check_cooker_merge = new System.Windows.Forms.CheckBox();
+            this.check_cooker_pixel_size = new System.Windows.Forms.CheckBox();
+            this.check_cooker_random_seed = new System.Windows.Forms.CheckBox();
+            this.check_cooker_output_size = new System.Windows.Forms.CheckBox();
+            this.check_cooker_optimation = new System.Windows.Forms.CheckBox();
             this.btn_cooker_help = new System.Windows.Forms.Button();
             this.btn_cooker_version = new System.Windows.Forms.Button();
             this.tab_mutator = new System.Windows.Forms.TabPage();
@@ -239,6 +251,18 @@
             // 
             // tab_cooker
             // 
+            this.tab_cooker.Controls.Add(this.btn_cooker_output_folder);
+            this.tab_cooker.Controls.Add(this.txt_cooker_output_folder);
+            this.tab_cooker.Controls.Add(this.label19);
+            this.tab_cooker.Controls.Add(this.btn_cooker_input_select);
+            this.tab_cooker.Controls.Add(this.txt_cooker_input);
+            this.tab_cooker.Controls.Add(this.label18);
+            this.tab_cooker.Controls.Add(this.check_cooker_archive);
+            this.tab_cooker.Controls.Add(this.check_cooker_merge);
+            this.tab_cooker.Controls.Add(this.check_cooker_pixel_size);
+            this.tab_cooker.Controls.Add(this.check_cooker_random_seed);
+            this.tab_cooker.Controls.Add(this.check_cooker_output_size);
+            this.tab_cooker.Controls.Add(this.check_cooker_optimation);
             this.tab_cooker.Controls.Add(this.btn_cooker_help);
             this.tab_cooker.Controls.Add(this.btn_cooker_version);
             this.tab_cooker.Location = new System.Drawing.Point(4, 22);
@@ -248,6 +272,134 @@
             this.tab_cooker.TabIndex = 1;
             this.tab_cooker.Text = "sbscooker";
             this.tab_cooker.UseVisualStyleBackColor = true;
+            // 
+            // btn_cooker_output_folder
+            // 
+            this.btn_cooker_output_folder.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_cooker_output_folder.Location = new System.Drawing.Point(788, 41);
+            this.btn_cooker_output_folder.Name = "btn_cooker_output_folder";
+            this.btn_cooker_output_folder.Size = new System.Drawing.Size(32, 20);
+            this.btn_cooker_output_folder.TabIndex = 15;
+            this.btn_cooker_output_folder.Text = "...";
+            this.btn_cooker_output_folder.UseVisualStyleBackColor = true;
+            this.btn_cooker_output_folder.Click += new System.EventHandler(this.btn_cooker_output_folder_Click);
+            // 
+            // txt_cooker_output_folder
+            // 
+            this.txt_cooker_output_folder.Location = new System.Drawing.Point(252, 41);
+            this.txt_cooker_output_folder.Name = "txt_cooker_output_folder";
+            this.txt_cooker_output_folder.Size = new System.Drawing.Size(530, 20);
+            this.txt_cooker_output_folder.TabIndex = 14;
+            this.txt_cooker_output_folder.TextChanged += new System.EventHandler(this.txt_cooker_output_folder_TextChanged);
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(175, 45);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(71, 13);
+            this.label19.TabIndex = 13;
+            this.label19.Text = "Output folder:";
+            // 
+            // btn_cooker_input_select
+            // 
+            this.btn_cooker_input_select.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_cooker_input_select.Location = new System.Drawing.Point(788, 6);
+            this.btn_cooker_input_select.Name = "btn_cooker_input_select";
+            this.btn_cooker_input_select.Size = new System.Drawing.Size(32, 20);
+            this.btn_cooker_input_select.TabIndex = 12;
+            this.btn_cooker_input_select.Text = "...";
+            this.btn_cooker_input_select.UseVisualStyleBackColor = true;
+            this.btn_cooker_input_select.Click += new System.EventHandler(this.btn_cooker_input_select_Click);
+            // 
+            // txt_cooker_input
+            // 
+            this.txt_cooker_input.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_cooker_input.Location = new System.Drawing.Point(252, 6);
+            this.txt_cooker_input.Name = "txt_cooker_input";
+            this.txt_cooker_input.Size = new System.Drawing.Size(530, 20);
+            this.txt_cooker_input.TabIndex = 11;
+            this.txt_cooker_input.TextChanged += new System.EventHandler(this.txt_cooker_input_TextChanged);
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(175, 11);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(53, 13);
+            this.label18.TabIndex = 10;
+            this.label18.Text = "Input File:";
+            // 
+            // check_cooker_archive
+            // 
+            this.check_cooker_archive.AutoSize = true;
+            this.check_cooker_archive.Location = new System.Drawing.Point(6, 73);
+            this.check_cooker_archive.Name = "check_cooker_archive";
+            this.check_cooker_archive.Size = new System.Drawing.Size(78, 17);
+            this.check_cooker_archive.TabIndex = 9;
+            this.check_cooker_archive.Text = "No archive";
+            this.check_cooker_archive.UseVisualStyleBackColor = true;
+            this.check_cooker_archive.CheckedChanged += new System.EventHandler(this.check_cooker_archive_CheckedChanged);
+            // 
+            // check_cooker_merge
+            // 
+            this.check_cooker_merge.AutoSize = true;
+            this.check_cooker_merge.Location = new System.Drawing.Point(6, 50);
+            this.check_cooker_merge.Name = "check_cooker_merge";
+            this.check_cooker_merge.Size = new System.Drawing.Size(102, 17);
+            this.check_cooker_merge.TabIndex = 8;
+            this.check_cooker_merge.Text = "Merge all results";
+            this.check_cooker_merge.UseVisualStyleBackColor = true;
+            this.check_cooker_merge.CheckedChanged += new System.EventHandler(this.check_cooker_merge_CheckedChanged);
+            // 
+            // check_cooker_pixel_size
+            // 
+            this.check_cooker_pixel_size.AutoSize = true;
+            this.check_cooker_pixel_size.Location = new System.Drawing.Point(6, 165);
+            this.check_cooker_pixel_size.Name = "check_cooker_pixel_size";
+            this.check_cooker_pixel_size.Size = new System.Drawing.Size(106, 17);
+            this.check_cooker_pixel_size.TabIndex = 7;
+            this.check_cooker_pixel_size.Text = "Expose pixel size";
+            this.check_cooker_pixel_size.UseVisualStyleBackColor = true;
+            this.check_cooker_pixel_size.CheckedChanged += new System.EventHandler(this.check_expose_pixel_size_CheckedChanged);
+            // 
+            // check_cooker_random_seed
+            // 
+            this.check_cooker_random_seed.AutoSize = true;
+            this.check_cooker_random_seed.Checked = true;
+            this.check_cooker_random_seed.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.check_cooker_random_seed.Location = new System.Drawing.Point(6, 142);
+            this.check_cooker_random_seed.Name = "check_cooker_random_seed";
+            this.check_cooker_random_seed.Size = new System.Drawing.Size(125, 17);
+            this.check_cooker_random_seed.TabIndex = 6;
+            this.check_cooker_random_seed.Text = "Expose random seed";
+            this.check_cooker_random_seed.UseVisualStyleBackColor = true;
+            this.check_cooker_random_seed.CheckedChanged += new System.EventHandler(this.check_cooker_random_seed_CheckedChanged);
+            // 
+            // check_cooker_output_size
+            // 
+            this.check_cooker_output_size.AutoSize = true;
+            this.check_cooker_output_size.Checked = true;
+            this.check_cooker_output_size.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.check_cooker_output_size.Location = new System.Drawing.Point(6, 119);
+            this.check_cooker_output_size.Name = "check_cooker_output_size";
+            this.check_cooker_output_size.Size = new System.Drawing.Size(115, 17);
+            this.check_cooker_output_size.TabIndex = 5;
+            this.check_cooker_output_size.Text = "Expose output size";
+            this.check_cooker_output_size.UseVisualStyleBackColor = true;
+            this.check_cooker_output_size.CheckedChanged += new System.EventHandler(this.check_cooker_output_size_CheckedChanged);
+            // 
+            // check_cooker_optimation
+            // 
+            this.check_cooker_optimation.AutoSize = true;
+            this.check_cooker_optimation.Location = new System.Drawing.Point(6, 96);
+            this.check_cooker_optimation.Name = "check_cooker_optimation";
+            this.check_cooker_optimation.Size = new System.Drawing.Size(93, 17);
+            this.check_cooker_optimation.TabIndex = 4;
+            this.check_cooker_optimation.Text = "No Optimation";
+            this.check_cooker_optimation.UseVisualStyleBackColor = true;
+            this.check_cooker_optimation.CheckedChanged += new System.EventHandler(this.check_cooker_optimation_CheckedChanged);
             // 
             // btn_cooker_help
             // 
@@ -832,7 +984,7 @@
             this.btn_run.UseVisualStyleBackColor = true;
             this.btn_run.Click += new System.EventHandler(this.btn_run_Click);
             // 
-            // Form1
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -845,7 +997,7 @@
             this.Controls.Add(this.tab_manager);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "Form1";
+            this.Name = "MainForm";
             this.Text = "SD Batch Tools GUI";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
@@ -853,6 +1005,7 @@
             this.tab_manager.ResumeLayout(false);
             this.tab_baker.ResumeLayout(false);
             this.tab_cooker.ResumeLayout(false);
+            this.tab_cooker.PerformLayout();
             this.tab_mutator.ResumeLayout(false);
             this.tab_render.ResumeLayout(false);
             this.tab_render.PerformLayout();
@@ -933,6 +1086,18 @@
         private System.Windows.Forms.Button btn_render_open_output;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripMenuItem openOutputFolderToolStripMenuItem;
+        private System.Windows.Forms.CheckBox check_cooker_output_size;
+        private System.Windows.Forms.CheckBox check_cooker_optimation;
+        private System.Windows.Forms.CheckBox check_cooker_random_seed;
+        private System.Windows.Forms.CheckBox check_cooker_pixel_size;
+        private System.Windows.Forms.CheckBox check_cooker_merge;
+        private System.Windows.Forms.CheckBox check_cooker_archive;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Button btn_cooker_input_select;
+        private System.Windows.Forms.TextBox txt_cooker_input;
+        private System.Windows.Forms.Button btn_cooker_output_folder;
+        private System.Windows.Forms.TextBox txt_cooker_output_folder;
+        private System.Windows.Forms.Label label19;
     }
 }
 

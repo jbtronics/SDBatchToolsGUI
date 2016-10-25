@@ -22,6 +22,16 @@ namespace SDBatchToolsHelper
 {
     public class Sbsmutator : IBatchTool
     {
+
+        public enum Modes
+        {
+            unset,
+            graph_parameters_editor,
+            info,
+            specialization,
+            update
+        }
+
         public Sbsmutator()
         {
 

@@ -22,6 +22,26 @@ namespace SDBatchToolsHelper
 {
     public class Sbsbaker : IBatchTool
     {
+
+        public enum Modes
+        {
+            unset,
+            ambient_occlusion,
+            ambient_occlusion_from_mesh,
+            bent_normal_from_mesh,
+            color_from_mesh,
+            curvature,
+            height_from_mesh,
+            normal_from_mesh,
+            normal_world_space,
+            opacity_mask_from_mesh,
+            position,
+            texture_from_mesh,
+            thickness_from_mesh,
+            uv_map,
+            world_space_direction
+        }
+
         public Sbsbaker()
         {
 

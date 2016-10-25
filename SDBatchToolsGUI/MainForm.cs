@@ -219,6 +219,42 @@ namespace SDBatchToolsGUI
             printHelp(_sbscooker);
         }
 
+        private void check_cooker_merge_CheckedChanged(object sender, EventArgs e)
+        {
+            _sbscooker.Merge = check_cooker_merge.Checked;
+            updateCMDLine(_sbscooker);
+        }
+
+        private void check_cooker_archive_CheckedChanged(object sender, EventArgs e)
+        {
+            _sbscooker.NoArchive = check_cooker_archive.Checked;
+            updateCMDLine(_sbscooker);
+        }
+
+        private void check_cooker_optimation_CheckedChanged(object sender, EventArgs e)
+        {
+            _sbscooker.NoOptimation = check_cooker_optimation.Checked;
+            updateCMDLine(_sbscooker);
+        }
+
+        private void check_cooker_output_size_CheckedChanged(object sender, EventArgs e)
+        {
+            _sbscooker.ExposeOutputSize = check_cooker_output_size.Checked;
+            updateCMDLine(_sbscooker);
+        }
+
+        private void check_cooker_random_seed_CheckedChanged(object sender, EventArgs e)
+        {
+            _sbscooker.ExposeRandomSeed = check_cooker_random_seed.Checked;
+            updateCMDLine(_sbscooker);
+        }
+
+        private void check_expose_pixel_size_CheckedChanged(object sender, EventArgs e)
+        {
+            _sbscooker.ExposePixelSize = check_cooker_pixel_size.Checked;
+            updateCMDLine(_sbscooker);
+        }
+
         #endregion
 
         #region sbsmutator
@@ -522,8 +558,49 @@ namespace SDBatchToolsGUI
 
 
 
+
+
+
         #endregion
 
-        
+        private void btn_cooker_input_select_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog1 = new OpenFileDialog();
+            openFileDialog1.Filter = "Substance File|*.sbs";
+            openFileDialog1.Title = "Select a Substance Editor File";
+
+            if (openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            { 
+                txt_cooker_input.Text = openFileDialog1.FileName;
+
+                if (_sbscooker.OutputPath == "")
+                {
+                    _sbscooker.OutputPath = System.IO.Path.GetDirectoryName(openFileDialog1.FileName);
+                    updateCMDLine(_sbscooker);
+                }
+            }
+        }
+
+        private void txt_cooker_input_TextChanged(object sender, EventArgs e)
+        {
+            _sbscooker.InputFile = txt_cooker_input.Text;
+            updateCMDLine(_sbscooker);
+        }
+
+        private void txt_cooker_output_folder_TextChanged(object sender, EventArgs e)
+        {
+            _sbscooker.OutputPath = txt_cooker_output_folder.Text;
+            updateCMDLine(_sbscooker);
+        }
+
+        private void btn_cooker_output_folder_Click(object sender, EventArgs e)
+        {
+            FolderBrowserDialog fbd = new FolderBrowserDialog();
+            fbd.ShowNewFolderButton = true;
+            if (fbd.ShowDialog() == DialogResult.OK)
+            {
+                txt_cooker_output_folder.Text = fbd.SelectedPath;
+            }
+        }
     }
 }
