@@ -11,6 +11,7 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
+
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -40,18 +41,54 @@ namespace SDBatchToolsGUI
             InitializeComponent();
         }
 
-        private void stripitem_settings_Click(object sender, EventArgs e)
+
+        private void Form1_Load(object sender, EventArgs e)
         {
-            new Settings().Show();
+            updateCMDLine(_sbsrender);
         }
 
+        private void tab_manager_Selected(object sender, TabControlEventArgs e)
+        {
+            switch(e.TabPage.Text)
+            {
+                case "sbsrender":
+                    updateCMDLine(_sbsrender);
+                    break;
+                case "sbsmutator":
+                    updateCMDLine(_sbsmutator);
+                    break;
+                case "sbscooker":
+                    updateCMDLine(_sbscooker);
+                    break;
+                case "sbsbaker":
+                    updateCMDLine(_sbsbaker);
+                    break;
+            }
+        }
         
+
+        #region Preview Line
+        private void txt_preview_KeyDown(object sender, KeyEventArgs e)
+        {
+            //Execute Code on Enter
+            if (e.KeyCode == Keys.Enter)
+            {
+                runCMD();
+            }
+        }
 
         private void updateCMDLine(IBatchTool tool)
         {
             txt_preview.Text = tool.getCmdLine();
         }
 
+        private void btn_run_Click(object sender, EventArgs e)
+        {
+            runCMD();
+        }
+        #endregion
+
+        #region Output Box
         private void runCMD()
         {
             runCMD(txt_preview.Text);
@@ -100,29 +137,29 @@ namespace SDBatchToolsGUI
                 info.FileName = Properties.Settings.Default.tools_path + "\\" + filename;
             }
 
-                try
+            try
             {
                 var proc = Process.Start(info);
                 _proc = proc;
 
                 //Redirect Output
                 proc.OutputDataReceived += new DataReceivedEventHandler(OutputHandler);
-                proc.ErrorDataReceived += new DataReceivedEventHandler(OutputHandler); 
+                proc.ErrorDataReceived += new DataReceivedEventHandler(OutputHandler);
                 proc.BeginOutputReadLine();
                 proc.BeginErrorReadLine();
 
-                
+
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), "Error!", MessageBoxButtons.OK,MessageBoxIcon.Error);
+                MessageBox.Show(ex.ToString(), "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
         }
 
         void OutputHandler(object sender, DataReceivedEventArgs e)
         {
-            
+
             Trace.WriteLine(e.Data);
             this.BeginInvoke(new MethodInvoker(() =>
             {
@@ -132,53 +169,9 @@ namespace SDBatchToolsGUI
             }));
         }
 
-        private void tab_manager_Selected(object sender, TabControlEventArgs e)
-        {
-            switch(e.TabPage.Text)
-            {
-                case "sbsrender":
-                    updateCMDLine(_sbsrender);
-                    break;
-                case "sbsmutator":
-                    updateCMDLine(_sbsmutator);
-                    break;
-                case "sbscooker":
-                    updateCMDLine(_sbscooker);
-                    break;
-                case "sbsbaker":
-                    updateCMDLine(_sbsbaker);
-                    break;
-            }
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            updateCMDLine(_sbsrender);
-        }
-
-        private void btn_run_Click(object sender, EventArgs e)
-        {
-                runCMD();                 
-        }
-
         private void clearOutput()
         {
             txt_output.Text = "";
-        }
-
-        private void clearOutputToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            clearOutput();
-        }
-
-        private void killProcessToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                _proc.Kill();
-            }
-            catch(Exception ex) { }
-        
         }
 
         private void printVersion(IBatchTool tool)
@@ -190,7 +183,7 @@ namespace SDBatchToolsGUI
         {
             runCMD(tool.getHelpCmd());
         }
-
+        #endregion
 
         #region sbsbaker
 
@@ -425,7 +418,7 @@ namespace SDBatchToolsGUI
 
         #endregion
 
-        #region Tookstrip
+        #region Toolstrip
         private void exportOutputToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SaveFileDialog sfd = new SaveFileDialog();
@@ -460,16 +453,29 @@ namespace SDBatchToolsGUI
             Application.Exit();
         }
 
+        private void killProcessToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                _proc.Kill();
+            }
+            catch (Exception ex) { }
+
+        }
+
+        private void clearOutputToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            clearOutput();
+        }
+
+        private void stripitem_settings_Click(object sender, EventArgs e)
+        {
+            new Settings().Show();
+        }
+
         #endregion
 
-        private void txt_preview_KeyDown(object sender, KeyEventArgs e)
-        {
-            //Execute Code on Enter
-            if (e.KeyCode == Keys.Enter)
-            {
-                runCMD();
-            }                
-        }
+       
 
        
     }
