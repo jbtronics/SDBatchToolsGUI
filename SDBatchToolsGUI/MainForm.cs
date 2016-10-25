@@ -27,7 +27,7 @@ using System.IO;
 
 namespace SDBatchToolsGUI
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
         Sbsrender _sbsrender = new Sbsrender();
         Sbsbaker _sbsbaker = new Sbsbaker();
@@ -36,7 +36,7 @@ namespace SDBatchToolsGUI
 
         Process _proc;
 
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
         }
