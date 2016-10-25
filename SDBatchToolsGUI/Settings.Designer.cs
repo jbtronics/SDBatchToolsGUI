@@ -34,12 +34,13 @@
             this.txt_tools_path = new System.Windows.Forms.TextBox();
             this.btn_path_select = new System.Windows.Forms.Button();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
+            this.check_info = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // btn_ok
             // 
             this.btn_ok.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btn_ok.Location = new System.Drawing.Point(12, 102);
+            this.btn_ok.Location = new System.Drawing.Point(12, 121);
             this.btn_ok.Name = "btn_ok";
             this.btn_ok.Size = new System.Drawing.Size(75, 23);
             this.btn_ok.TabIndex = 0;
@@ -50,7 +51,7 @@
             // btn_cancel
             // 
             this.btn_cancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btn_cancel.Location = new System.Drawing.Point(93, 102);
+            this.btn_cancel.Location = new System.Drawing.Point(93, 121);
             this.btn_cancel.Name = "btn_cancel";
             this.btn_cancel.Size = new System.Drawing.Size(75, 23);
             this.btn_cancel.TabIndex = 1;
@@ -87,11 +88,23 @@
             this.btn_path_select.UseVisualStyleBackColor = true;
             this.btn_path_select.Click += new System.EventHandler(this.btn_path_select_Click);
             // 
+            // check_info
+            // 
+            this.check_info.AutoSize = true;
+            this.check_info.Location = new System.Drawing.Point(12, 56);
+            this.check_info.Name = "check_info";
+            this.check_info.Size = new System.Drawing.Size(121, 17);
+            this.check_info.TabIndex = 5;
+            this.check_info.Text = "Add Infos on Output";
+            this.check_info.UseVisualStyleBackColor = true;
+            
+            // 
             // Settings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(342, 137);
+            this.ClientSize = new System.Drawing.Size(342, 156);
+            this.Controls.Add(this.check_info);
             this.Controls.Add(this.btn_path_select);
             this.Controls.Add(this.txt_tools_path);
             this.Controls.Add(this.lbl_path);
@@ -113,5 +126,6 @@
         private System.Windows.Forms.TextBox txt_tools_path;
         private System.Windows.Forms.Button btn_path_select;
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
+        private System.Windows.Forms.CheckBox check_info;
     }
 }

@@ -45,6 +45,7 @@ namespace SDBatchToolsGUI
         private void SaveSettings()
         {
             Properties.Settings.Default.tools_path = txt_tools_path.Text;
+            Properties.Settings.Default.output_info = check_info.Checked;
 
             //Write the Settings to file
             Properties.Settings.Default.Save();
@@ -53,9 +54,10 @@ namespace SDBatchToolsGUI
         private void Settings_Load(object sender, EventArgs e)
         {
             txt_tools_path.Text = Properties.Settings.Default.tools_path;
+            check_info.Checked = Properties.Settings.Default.output_info;
 
             //Set Dir Dialog to old path
-            if(Properties.Settings.Default.tools_path!="")
+            if (Properties.Settings.Default.tools_path!="")
             {
                 folderBrowserDialog1.SelectedPath = Properties.Settings.Default.tools_path;
             }
@@ -69,5 +71,7 @@ namespace SDBatchToolsGUI
                 txt_tools_path.Text = folderBrowserDialog1.SelectedPath;
             }
         }
+
+        
     }
 }

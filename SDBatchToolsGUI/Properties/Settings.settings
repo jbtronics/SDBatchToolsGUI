@@ -5,5 +5,8 @@
     <Setting Name="tools_path" Type="System.String" Scope="User">
       <Value Profile="(Default)">C:\Program Files\Allegorithmic\Substance BatchTools\5</Value>
     </Setting>
+    <Setting Name="output_info" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

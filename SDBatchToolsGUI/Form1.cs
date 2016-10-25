@@ -142,6 +142,14 @@ namespace SDBatchToolsGUI
                 var proc = Process.Start(info);
                 _proc = proc;
 
+                //Add infos on Output start
+                if(Properties.Settings.Default.output_info)
+                {
+                    txt_output.Text += "Command: " + cmd + "\r\n";
+                    txt_output.Text += "Started on " + DateTime.Now.ToString() + "\r\n";
+                    txt_output.Text += "==================================================\r\n\r\n";
+                }
+
                 //Redirect Output
                 proc.OutputDataReceived += new DataReceivedEventHandler(OutputHandler);
                 proc.ErrorDataReceived += new DataReceivedEventHandler(OutputHandler);

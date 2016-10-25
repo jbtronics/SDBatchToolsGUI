@@ -34,5 +34,17 @@ namespace SDBatchToolsGUI.Properties {
                 this["tools_path"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool output_info {
+            get {
+                return ((bool)(this["output_info"]));
+            }
+            set {
+                this["output_info"] = value;
+            }
+        }
     }
 }
