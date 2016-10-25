@@ -34,17 +34,5 @@ namespace SDBatchToolsGUI.Properties {
                 this["tools_path"] = value;
             }
         }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("1000")]
-        public int engine_mem {
-            get {
-                return ((int)(this["engine_mem"]));
-            }
-            set {
-                this["engine_mem"] = value;
-            }
-        }
     }
 }

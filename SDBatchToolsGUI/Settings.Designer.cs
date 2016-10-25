@@ -33,17 +33,13 @@
             this.lbl_path = new System.Windows.Forms.Label();
             this.txt_tools_path = new System.Windows.Forms.TextBox();
             this.btn_path_select = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.numeric_max_mem = new System.Windows.Forms.NumericUpDown();
-            this.label2 = new System.Windows.Forms.Label();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
-            ((System.ComponentModel.ISupportInitialize)(this.numeric_max_mem)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_ok
             // 
             this.btn_ok.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btn_ok.Location = new System.Drawing.Point(12, 188);
+            this.btn_ok.Location = new System.Drawing.Point(12, 102);
             this.btn_ok.Name = "btn_ok";
             this.btn_ok.Size = new System.Drawing.Size(75, 23);
             this.btn_ok.TabIndex = 0;
@@ -54,7 +50,7 @@
             // btn_cancel
             // 
             this.btn_cancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btn_cancel.Location = new System.Drawing.Point(93, 188);
+            this.btn_cancel.Location = new System.Drawing.Point(93, 102);
             this.btn_cancel.Name = "btn_cancel";
             this.btn_cancel.Size = new System.Drawing.Size(75, 23);
             this.btn_cancel.TabIndex = 1;
@@ -91,54 +87,11 @@
             this.btn_path_select.UseVisualStyleBackColor = true;
             this.btn_path_select.Click += new System.EventHandler(this.btn_path_select_Click);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 62);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(107, 13);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Max. engine memory:";
-            // 
-            // numeric_max_mem
-            // 
-            this.numeric_max_mem.Location = new System.Drawing.Point(13, 79);
-            this.numeric_max_mem.Maximum = new decimal(new int[] {
-            32000,
-            0,
-            0,
-            0});
-            this.numeric_max_mem.Minimum = new decimal(new int[] {
-            100,
-            0,
-            0,
-            0});
-            this.numeric_max_mem.Name = "numeric_max_mem";
-            this.numeric_max_mem.Size = new System.Drawing.Size(120, 20);
-            this.numeric_max_mem.TabIndex = 6;
-            this.numeric_max_mem.Value = new decimal(new int[] {
-            1000,
-            0,
-            0,
-            0});
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(139, 81);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(23, 13);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "MB";
-            // 
             // Settings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(342, 223);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.numeric_max_mem);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(342, 137);
             this.Controls.Add(this.btn_path_select);
             this.Controls.Add(this.txt_tools_path);
             this.Controls.Add(this.lbl_path);
@@ -147,7 +100,6 @@
             this.Name = "Settings";
             this.Text = "Settings";
             this.Load += new System.EventHandler(this.Settings_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.numeric_max_mem)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -160,9 +112,6 @@
         private System.Windows.Forms.Label lbl_path;
         private System.Windows.Forms.TextBox txt_tools_path;
         private System.Windows.Forms.Button btn_path_select;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.NumericUpDown numeric_max_mem;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
     }
 }

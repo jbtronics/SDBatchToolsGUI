@@ -44,7 +44,6 @@ namespace SDBatchToolsGUI
 
         private void SaveSettings()
         {
-            Properties.Settings.Default.engine_mem = Convert.ToInt32(numeric_max_mem.Value);
             Properties.Settings.Default.tools_path = txt_tools_path.Text;
 
             //Write the Settings to file
@@ -53,7 +52,6 @@ namespace SDBatchToolsGUI
 
         private void Settings_Load(object sender, EventArgs e)
         {
-            numeric_max_mem.Value = Properties.Settings.Default.engine_mem;
             txt_tools_path.Text = Properties.Settings.Default.tools_path;
 
             //Set Dir Dialog to old path
