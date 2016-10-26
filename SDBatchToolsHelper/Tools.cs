@@ -33,5 +33,10 @@ namespace SDBatchToolsHelper
                 return p.Trim();
         }
 
+        public static string formatMode(String p)
+        {
+            return p.Replace("_", "-");
+        }
+
     }
 }

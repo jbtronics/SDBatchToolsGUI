@@ -43,6 +43,11 @@
             this.creditsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tab_manager = new System.Windows.Forms.TabControl();
             this.tab_baker = new System.Windows.Forms.TabPage();
+            this.btn_baker_input_select = new System.Windows.Forms.Button();
+            this.txt_baker_input = new System.Windows.Forms.TextBox();
+            this.label35 = new System.Windows.Forms.Label();
+            this.group_baker_mode = new System.Windows.Forms.GroupBox();
+            this.combo_baker_mode = new System.Windows.Forms.ComboBox();
             this.btn_baker_help = new System.Windows.Forms.Button();
             this.btn_baker_version = new System.Windows.Forms.Button();
             this.tab_cooker = new System.Windows.Forms.TabPage();
@@ -70,6 +75,8 @@
             this.btn_cooker_help = new System.Windows.Forms.Button();
             this.btn_cooker_version = new System.Windows.Forms.Button();
             this.tab_mutator = new System.Windows.Forms.TabPage();
+            this.label34 = new System.Windows.Forms.Label();
+            this.txt_mutator_input_graph = new System.Windows.Forms.TextBox();
             this.txt_mutator_connect_input = new System.Windows.Forms.TextBox();
             this.label33 = new System.Windows.Forms.Label();
             this.txt_mutator_connect_image = new System.Windows.Forms.TextBox();
@@ -145,11 +152,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txt_preview = new System.Windows.Forms.TextBox();
             this.btn_run = new System.Windows.Forms.Button();
-            this.label34 = new System.Windows.Forms.Label();
-            this.txt_mutator_input_graph = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             this.tab_manager.SuspendLayout();
             this.tab_baker.SuspendLayout();
+            this.group_baker_mode.SuspendLayout();
             this.tab_cooker.SuspendLayout();
             this.tab_mutator.SuspendLayout();
             this.group_mutator_mode.SuspendLayout();
@@ -276,6 +282,10 @@
             // 
             // tab_baker
             // 
+            this.tab_baker.Controls.Add(this.btn_baker_input_select);
+            this.tab_baker.Controls.Add(this.txt_baker_input);
+            this.tab_baker.Controls.Add(this.label35);
+            this.tab_baker.Controls.Add(this.group_baker_mode);
             this.tab_baker.Controls.Add(this.btn_baker_help);
             this.tab_baker.Controls.Add(this.btn_baker_version);
             this.tab_baker.Location = new System.Drawing.Point(4, 22);
@@ -285,6 +295,71 @@
             this.tab_baker.TabIndex = 0;
             this.tab_baker.Text = "sbsbaker";
             this.tab_baker.UseVisualStyleBackColor = true;
+            // 
+            // btn_baker_input_select
+            // 
+            this.btn_baker_input_select.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_baker_input_select.Location = new System.Drawing.Point(787, 9);
+            this.btn_baker_input_select.Name = "btn_baker_input_select";
+            this.btn_baker_input_select.Size = new System.Drawing.Size(32, 20);
+            this.btn_baker_input_select.TabIndex = 15;
+            this.btn_baker_input_select.Text = "...";
+            this.btn_baker_input_select.UseVisualStyleBackColor = true;
+            this.btn_baker_input_select.Click += new System.EventHandler(this.btn_baker_input_select_Click);
+            // 
+            // txt_baker_input
+            // 
+            this.txt_baker_input.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_baker_input.Location = new System.Drawing.Point(251, 9);
+            this.txt_baker_input.Name = "txt_baker_input";
+            this.txt_baker_input.Size = new System.Drawing.Size(530, 20);
+            this.txt_baker_input.TabIndex = 14;
+            this.txt_baker_input.TextChanged += new System.EventHandler(this.txt_baker_input_TextChanged);
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(182, 13);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(63, 13);
+            this.label35.TabIndex = 13;
+            this.label35.Text = "Input Mesh:";
+            // 
+            // group_baker_mode
+            // 
+            this.group_baker_mode.Controls.Add(this.combo_baker_mode);
+            this.group_baker_mode.Location = new System.Drawing.Point(7, 36);
+            this.group_baker_mode.Name = "group_baker_mode";
+            this.group_baker_mode.Size = new System.Drawing.Size(155, 52);
+            this.group_baker_mode.TabIndex = 2;
+            this.group_baker_mode.TabStop = false;
+            this.group_baker_mode.Text = "Mode";
+            // 
+            // combo_baker_mode
+            // 
+            this.combo_baker_mode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.combo_baker_mode.FormattingEnabled = true;
+            this.combo_baker_mode.Items.AddRange(new object[] {
+            "ambient-occlusion",
+            "ambient-occlusion-from-mesh",
+            "bent-normal-from-mesh",
+            "color-from-mesh",
+            "curvature",
+            "height-from-mesh",
+            "normal-from-mesh",
+            "normal-world-space",
+            "opacity-mask-from-mesh",
+            "position",
+            "texture-from-mesh",
+            "thickness-from-mesh",
+            "uv-map",
+            "world-space-direction"});
+            this.combo_baker_mode.Location = new System.Drawing.Point(6, 19);
+            this.combo_baker_mode.Name = "combo_baker_mode";
+            this.combo_baker_mode.Size = new System.Drawing.Size(142, 21);
+            this.combo_baker_mode.TabIndex = 0;
+            this.combo_baker_mode.SelectedIndexChanged += new System.EventHandler(this.combo_baker_mode_SelectedIndexChanged);
             // 
             // btn_baker_help
             // 
@@ -614,6 +689,26 @@
             this.tab_mutator.TabIndex = 2;
             this.tab_mutator.Text = "sbsmutator";
             this.tab_mutator.UseVisualStyleBackColor = true;
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(177, 37);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(66, 13);
+            this.label34.TabIndex = 55;
+            this.label34.Text = "Input Graph:";
+            this.label34.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // txt_mutator_input_graph
+            // 
+            this.txt_mutator_input_graph.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_mutator_input_graph.Location = new System.Drawing.Point(252, 30);
+            this.txt_mutator_input_graph.Name = "txt_mutator_input_graph";
+            this.txt_mutator_input_graph.Size = new System.Drawing.Size(568, 20);
+            this.txt_mutator_input_graph.TabIndex = 54;
+            this.txt_mutator_input_graph.TextChanged += new System.EventHandler(this.txt_mutator_input_graph_TextChanged);
             // 
             // txt_mutator_connect_input
             // 
@@ -1443,26 +1538,6 @@
             this.btn_run.UseVisualStyleBackColor = true;
             this.btn_run.Click += new System.EventHandler(this.btn_run_Click);
             // 
-            // label34
-            // 
-            this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(177, 37);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(66, 13);
-            this.label34.TabIndex = 55;
-            this.label34.Text = "Input Graph:";
-            this.label34.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // txt_mutator_input_graph
-            // 
-            this.txt_mutator_input_graph.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_mutator_input_graph.Location = new System.Drawing.Point(252, 30);
-            this.txt_mutator_input_graph.Name = "txt_mutator_input_graph";
-            this.txt_mutator_input_graph.Size = new System.Drawing.Size(568, 20);
-            this.txt_mutator_input_graph.TabIndex = 54;
-            this.txt_mutator_input_graph.TextChanged += new System.EventHandler(this.txt_mutator_input_graph_TextChanged);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1483,6 +1558,8 @@
             this.menuStrip1.PerformLayout();
             this.tab_manager.ResumeLayout(false);
             this.tab_baker.ResumeLayout(false);
+            this.tab_baker.PerformLayout();
+            this.group_baker_mode.ResumeLayout(false);
             this.tab_cooker.ResumeLayout(false);
             this.tab_cooker.PerformLayout();
             this.tab_mutator.ResumeLayout(false);
@@ -1619,6 +1696,11 @@
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.Label label34;
         private System.Windows.Forms.TextBox txt_mutator_input_graph;
+        private System.Windows.Forms.GroupBox group_baker_mode;
+        private System.Windows.Forms.ComboBox combo_baker_mode;
+        private System.Windows.Forms.Button btn_baker_input_select;
+        private System.Windows.Forms.TextBox txt_baker_input;
+        private System.Windows.Forms.Label label35;
     }
 }
 

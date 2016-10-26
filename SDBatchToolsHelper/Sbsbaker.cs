@@ -22,10 +22,8 @@ namespace SDBatchToolsHelper
 {
     public class Sbsbaker : IBatchTool
     {
-
         public enum Modes
         {
-            unset,
             ambient_occlusion,
             ambient_occlusion_from_mesh,
             bent_normal_from_mesh,
@@ -42,9 +40,37 @@ namespace SDBatchToolsHelper
             world_space_direction
         }
 
+        private string _inputmesh = "";
+        private string _outputpath = "";
+
         public Sbsbaker()
         {
 
+        }
+
+        public Modes Mode { get; set; }
+
+        public string InputMesh {
+            get
+            {
+                return _inputmesh;
+            }
+            set
+            {
+                _inputmesh = Tools.formatPath(value);
+            }
+        }
+
+        public string OutputPath
+        {
+            get
+            {
+                return _outputpath;
+            }
+            set
+            {
+                _outputpath = Tools.formatPath(value);
+            }
         }
 
         public string getCmdLine()

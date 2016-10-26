@@ -211,7 +211,25 @@ namespace SDBatchToolsHelper
 
         public string getHelpCmd()
         {
-            return getToolname() + "--help";
+            var s =  getToolname() + "--help";
+
+            switch(Mode)
+            {
+                case Modes.graph_parameters_editor:
+                    s += " graph-parameters-editor";
+                    break;
+                case Modes.info:
+                    s += " info";
+                    break;
+                case Modes.specialization:
+                    s += " specialization";
+                    break;
+                case Modes.update:
+                    s += " update";
+                    break;
+            }
+
+            return s;
         }
 
     }

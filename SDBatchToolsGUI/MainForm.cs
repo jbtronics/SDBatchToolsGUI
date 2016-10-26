@@ -45,6 +45,7 @@ namespace SDBatchToolsGUI
         private void Form1_Load(object sender, EventArgs e)
         {
             combo_mutator_mode.SelectedIndex = 1;
+            combo_baker_mode.SelectedIndex = 0;
 
             //These mutator boxes are disabled by default, default is info mode
             txt_mutator_alias.Enabled = false;
@@ -217,6 +218,93 @@ namespace SDBatchToolsGUI
             printHelp(_sbsbaker);
         }
 
+        private void combo_baker_mode_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int i = combo_baker_mode.SelectedIndex;
+
+            if(i==0)
+            {
+                _sbsbaker.Mode = Sbsbaker.Modes.ambient_occlusion;
+            }
+            else if(i==1)
+            {
+                _sbsbaker.Mode = Sbsbaker.Modes.ambient_occlusion_from_mesh;
+            }
+            else if(i==2)
+            {
+                _sbsbaker.Mode = Sbsbaker.Modes.bent_normal_from_mesh;
+            }
+            else if(i==3)
+            {
+                _sbsbaker.Mode = Sbsbaker.Modes.color_from_mesh;
+            }
+            else if(i==4)
+            {
+                _sbsbaker.Mode = Sbsbaker.Modes.curvature;
+            }
+            else if(i==5)
+            {
+                _sbsbaker.Mode = Sbsbaker.Modes.height_from_mesh;
+            }
+            else if(i==6)
+            {
+                _sbsbaker.Mode = Sbsbaker.Modes.normal_from_mesh;
+            }
+            else if(i==7)
+            {
+                _sbsbaker.Mode = Sbsbaker.Modes.normal_world_space;
+            }
+            else if(i==8)
+            {
+                _sbsbaker.Mode = Sbsbaker.Modes.opacity_mask_from_mesh;
+            }
+            else if(i==9)
+            {
+                _sbsbaker.Mode = Sbsbaker.Modes.position;
+            }
+            else if(i==10)
+            {
+                _sbsbaker.Mode = Sbsbaker.Modes.texture_from_mesh;
+            }
+            else if(i==11)
+            {
+                _sbsbaker.Mode = Sbsbaker.Modes.thickness_from_mesh;
+            }
+            else if(i==12)
+            {
+                _sbsbaker.Mode = Sbsbaker.Modes.uv_map;
+            }
+            else if(i==13)
+            {
+                _sbsbaker.Mode = Sbsbaker.Modes.world_space_direction;
+            }
+
+            updateCMDLine(_sbsbaker);
+        }
+
+        private void txt_baker_input_TextChanged(object sender, EventArgs e)
+        {
+            _sbsbaker.InputMesh = txt_baker_input.Text;
+            updateCMDLine(_sbsbaker);
+        }
+
+        private void btn_baker_input_select_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog1 = new OpenFileDialog();
+            openFileDialog1.Filter = "OBJ file|*.obj|FBX File|*.fbx";
+            openFileDialog1.Title = "Select a Mesh";
+
+            if (openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                txt_baker_input.Text = openFileDialog1.FileName;
+
+                if (_sbsbaker.OutputPath == "")
+                {
+                    _sbsbaker.OutputPath = System.IO.Path.GetDirectoryName(openFileDialog1.FileName);
+                    updateCMDLine(_sbscooker);
+                }
+            }
+        }
 
         #endregion
 
@@ -611,7 +699,7 @@ namespace SDBatchToolsGUI
             {
                 format = (Sbsrender.RenderOutputFormat)combo_render_fileformat.SelectedIndex;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 format = Sbsrender.RenderOutputFormat.unset;
             }
@@ -636,7 +724,7 @@ namespace SDBatchToolsGUI
             {
                 format = (Sbsrender.DDSCompression)combo_render_compression.SelectedIndex;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 format = Sbsrender.DDSCompression.unset;
             }
@@ -847,7 +935,7 @@ namespace SDBatchToolsGUI
             {
                 _proc.Kill();
             }
-            catch (Exception ex) { }
+            catch (Exception ) { }
 
         }
 
@@ -897,6 +985,9 @@ namespace SDBatchToolsGUI
         {
             new Credits().Show();
         }
+
+
+
 
 
 
