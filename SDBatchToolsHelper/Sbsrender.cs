@@ -137,7 +137,7 @@ namespace SDBatchToolsHelper
                 if (OutputFormat != RenderOutputFormat.unset)
                     s += " --output-format " + OutputFormat.ToString();
 
-                if (Compression != DDSCompression.unset)
+                if (Compression != DDSCompression.unset && OutputFormat == RenderOutputFormat.dds)
                     s += " --output-format-compression " + Compression.ToString();
 
                 if (SetValue != "")

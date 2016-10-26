@@ -24,7 +24,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Jan Böhmer")]
 [assembly: AssemblyProduct("SDBatchToolsHelper")]
-[assembly: AssemblyCopyright("Copyright © Jan Böhmer  2016")]
+[assembly: AssemblyCopyright("Copyright (C) Jan Böhmer  2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

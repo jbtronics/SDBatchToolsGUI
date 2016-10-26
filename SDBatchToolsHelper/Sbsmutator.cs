@@ -22,6 +22,9 @@ namespace SDBatchToolsHelper
 {
     public class Sbsmutator : IBatchTool
     {
+        private string _inputpath;
+        private string _outputpath;
+        private string _presets_path;
 
         public enum Modes
         {
@@ -36,10 +39,133 @@ namespace SDBatchToolsHelper
         {
 
         }
-        
+
+        public Modes Mode { get; set; } = Modes.unset;
+
+        public bool NoDependency { get; set; } = false;
+        public bool OutputMerge { get; set; } = false;
+        public bool HideParameters { get; set; } = false;
+
+        public string InputGraph { get; set; } = "";
+        public string OutputName { get; set; } = "";
+        public string Alias { get; set; } = "";
+        public string OutputGraphName { get; set; } = "";
+        public string ConnectImage { get; set; } = "";
+        public string ConnectInput { get; set; } = "";
+        public string AdditionalParameters { get; set; } = "";
+        public string SwitchToConstant { get; set; } = "";
+        public string SetDefaultValue { get; set; } = "";
+   
+        public string InputFile
+        {
+            get
+            {
+                return _inputpath;
+            }
+            set
+            {
+                _inputpath = Tools.formatPath(_inputpath);
+            }
+        }
+
+        public string OutputPath
+        {
+            get
+            {
+                return _outputpath;
+            }
+            set
+            {
+                _outputpath = Tools.formatPath(value);
+            }
+        }
+
+        public string PresetsPath
+        {
+            get
+            {
+                return _presets_path;
+            }
+            set
+            {
+                _presets_path = Tools.formatPath(value);
+            }
+        }
         public string getCmdLine()
         {
             String s = getToolname();
+
+            if(Mode == Modes.graph_parameters_editor)
+            {
+                s += " --graph-parameters-editor";
+
+                if (InputFile != "")
+                    s += " --input " + InputFile;
+
+                if (InputGraph != "")
+                    s += " --input-graph " + InputGraph;
+
+                if (OutputName != "")
+                    s += " --output-name " + OutputName;
+
+                if (OutputPath != "")
+                    s += " --output-path " + OutputPath;
+
+                if (PresetsPath != "")
+                    s += " --presets-path " + PresetsPath;
+
+                if (SwitchToConstant != "")
+                    s += " --switch-to-constant " + SwitchToConstant;
+
+                if (SetDefaultValue != "")
+                    s += " --set-default-value " + SetDefaultValue;
+
+                if (AdditionalParameters != "")
+                    s += " " + AdditionalParameters;
+            }
+
+            else if (Mode == Modes.info)
+            {
+                if (InputFile != "")
+                    s += " --input " + InputFile;
+            }
+
+            else if (Mode==Modes.specialization)
+            {
+
+                if (InputFile != "")
+                    s += " --input " + InputFile;
+
+                if (InputGraph != "")
+                    s += " --input-graph " + InputGraph;
+
+                if (OutputMerge)
+                    s += " --output-merge";
+
+                if (PresetsPath != "")
+                    s += " --presets-path " + PresetsPath;
+
+                if (Alias != "")
+                    s += " --alias " + Alias;
+
+                if (OutputPath != "")
+                    s += " --output-path " + OutputPath;
+
+                if (OutputName != "")
+                    s += " --output-name " + OutputName;
+
+                if (OutputGraphName != "")
+                    s += " --output-graph-name " + OutputGraphName;
+
+                if (ConnectImage != "")
+                    s += " --connect-image " + ConnectImage;
+
+                if (ConnectInput != "")
+                    s += " --connect-input " + ConnectInput;
+
+                if (HideParameters)
+                    s += " --hide-parameters";
+            }
 
             return s.Trim();
         }

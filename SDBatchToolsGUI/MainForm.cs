@@ -255,6 +255,80 @@ namespace SDBatchToolsGUI
             updateCMDLine(_sbscooker);
         }
 
+        private void btn_cooker_input_select_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog1 = new OpenFileDialog();
+            openFileDialog1.Filter = "Substance File|*.sbs";
+            openFileDialog1.Title = "Select a Substance Editor File";
+
+            if (openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                txt_cooker_input.Text = openFileDialog1.FileName;
+
+                if (_sbscooker.OutputPath == "")
+                {
+                    _sbscooker.OutputPath = System.IO.Path.GetDirectoryName(openFileDialog1.FileName);
+                    updateCMDLine(_sbscooker);
+                }
+            }
+        }
+
+        private void txt_cooker_input_TextChanged(object sender, EventArgs e)
+        {
+            _sbscooker.InputFile = txt_cooker_input.Text;
+            updateCMDLine(_sbscooker);
+        }
+
+        private void txt_cooker_output_folder_TextChanged(object sender, EventArgs e)
+        {
+            _sbscooker.OutputPath = txt_cooker_output_folder.Text;
+            updateCMDLine(_sbscooker);
+        }
+
+        private void btn_cooker_output_folder_Click(object sender, EventArgs e)
+        {
+            FolderBrowserDialog fbd = new FolderBrowserDialog();
+            fbd.ShowNewFolderButton = true;
+            if (fbd.ShowDialog() == DialogResult.OK)
+            {
+                txt_cooker_output_folder.Text = fbd.SelectedPath;
+            }
+        }
+
+        private void txt_cooker_output_name_TextChanged(object sender, EventArgs e)
+        {
+            _sbscooker.OutputName = txt_cooker_output_name.Text;
+            updateCMDLine(_sbscooker);
+        }
+
+        private void txt_cooker_sizelimit_TextChanged(object sender, EventArgs e)
+        {
+            _sbscooker.SizeLimit = txt_cooker_sizelimit.Text;
+            updateCMDLine(_sbscooker);
+        }
+
+        private void txt_cooker_alias_TextChanged(object sender, EventArgs e)
+        {
+            _sbscooker.Alias = txt_cooker_alias.Text;
+            updateCMDLine(_sbscooker);
+        }
+
+        private void txt_cooker_includes_TextChanged(object sender, EventArgs e)
+        {
+            _sbscooker.IncludesDir = txt_cooker_includes.Text;
+            updateCMDLine(_sbscooker);
+        }
+
+        private void btn_cooker_includes_select_Click(object sender, EventArgs e)
+        {
+            FolderBrowserDialog fbd = new FolderBrowserDialog();
+            fbd.ShowNewFolderButton = true;
+            if (fbd.ShowDialog() == DialogResult.OK)
+            {
+                txt_cooker_includes.Text = Tools.formatPath( fbd.SelectedPath);
+            }
+        }
+
         #endregion
 
         #region sbsmutator
@@ -288,6 +362,21 @@ namespace SDBatchToolsGUI
             {
                 _sbsrender.Mode = Sbsrender.SbsrenderModes.info;
                 updateCMDLine(_sbsrender);
+
+                txt_render_engine.Enabled = false;
+                txt_render_entry_id.Enabled = false;
+                txt_render_entry_path.Enabled = false;
+                txt_render_graph.Enabled = false;
+                txt_render_output.Enabled = false;
+                txt_render_output_name.Enabled = false;
+                txt_render_output_size.Enabled = false;
+                txt_render_pixel_size.Enabled = false;
+                txt_render_seed.Enabled = false;
+                txt_render_values.Enabled = false;
+                txt_render_graph_output.Enabled = false;
+                numeric_render_budget.Enabled = false;
+                combo_render_compression.Enabled = false;
+                combo_render_fileformat.Enabled = false;
             }
         }
 
@@ -297,6 +386,21 @@ namespace SDBatchToolsGUI
             {
                 _sbsrender.Mode = Sbsrender.SbsrenderModes.render;
                 updateCMDLine(_sbsrender);
+
+                txt_render_engine.Enabled = true;
+                txt_render_entry_id.Enabled = true;
+                txt_render_entry_path.Enabled = true;
+                txt_render_graph.Enabled = true;
+                txt_render_output.Enabled = true;
+                txt_render_output_name.Enabled = true;
+                txt_render_output_size.Enabled = true;
+                txt_render_pixel_size.Enabled = true;
+                txt_render_seed.Enabled = true;
+                txt_render_values.Enabled = true;
+                txt_render_graph_output.Enabled = true;
+                numeric_render_budget.Enabled = true;
+                combo_render_compression.Enabled = false;
+                combo_render_fileformat.Enabled = true;
             }
         }
 
@@ -346,17 +450,25 @@ namespace SDBatchToolsGUI
             Sbsrender.RenderOutputFormat format;
 
             try
-            { 
+            {
                 format = (Sbsrender.RenderOutputFormat)combo_render_fileformat.SelectedIndex;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 format = Sbsrender.RenderOutputFormat.unset;
-            }          
+            }
 
             _sbsrender.OutputFormat = format;
             updateCMDLine(_sbsrender);
-        }
+
+
+            if (_sbsrender.OutputFormat == Sbsrender.RenderOutputFormat.dds)
+                combo_render_compression.Enabled = true;
+            else
+                combo_render_compression.Enabled = false;
+
+        }   
+            
 
         private void combo_render_compression_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -561,46 +673,17 @@ namespace SDBatchToolsGUI
 
 
 
+
+
+
+
+
+
         #endregion
 
-        private void btn_cooker_input_select_Click(object sender, EventArgs e)
+        private void creditsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            OpenFileDialog openFileDialog1 = new OpenFileDialog();
-            openFileDialog1.Filter = "Substance File|*.sbs";
-            openFileDialog1.Title = "Select a Substance Editor File";
-
-            if (openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-            { 
-                txt_cooker_input.Text = openFileDialog1.FileName;
-
-                if (_sbscooker.OutputPath == "")
-                {
-                    _sbscooker.OutputPath = System.IO.Path.GetDirectoryName(openFileDialog1.FileName);
-                    updateCMDLine(_sbscooker);
-                }
-            }
-        }
-
-        private void txt_cooker_input_TextChanged(object sender, EventArgs e)
-        {
-            _sbscooker.InputFile = txt_cooker_input.Text;
-            updateCMDLine(_sbscooker);
-        }
-
-        private void txt_cooker_output_folder_TextChanged(object sender, EventArgs e)
-        {
-            _sbscooker.OutputPath = txt_cooker_output_folder.Text;
-            updateCMDLine(_sbscooker);
-        }
-
-        private void btn_cooker_output_folder_Click(object sender, EventArgs e)
-        {
-            FolderBrowserDialog fbd = new FolderBrowserDialog();
-            fbd.ShowNewFolderButton = true;
-            if (fbd.ShowDialog() == DialogResult.OK)
-            {
-                txt_cooker_output_folder.Text = fbd.SelectedPath;
-            }
+            new Credits().Show();
         }
     }
 }

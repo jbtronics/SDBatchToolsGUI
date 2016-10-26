@@ -62,7 +62,6 @@
             this.btn_mutator_help = new System.Windows.Forms.Button();
             this.btn_mutator_version = new System.Windows.Forms.Button();
             this.tab_render = new System.Windows.Forms.TabPage();
-            this.btn_render_open_output = new System.Windows.Forms.Button();
             this.txt_render_values = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.txt_render_pixel_size = new System.Windows.Forms.TextBox();
@@ -107,6 +106,17 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txt_preview = new System.Windows.Forms.TextBox();
             this.btn_run = new System.Windows.Forms.Button();
+            this.label20 = new System.Windows.Forms.Label();
+            this.txt_cooker_output_name = new System.Windows.Forms.TextBox();
+            this.label21 = new System.Windows.Forms.Label();
+            this.txt_cooker_sizelimit = new System.Windows.Forms.TextBox();
+            this.label22 = new System.Windows.Forms.Label();
+            this.txt_cooker_alias = new System.Windows.Forms.TextBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.txt_cooker_includes = new System.Windows.Forms.TextBox();
+            this.btn_cooker_includes_select = new System.Windows.Forms.Button();
+            this.infoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.creditsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.tab_manager.SuspendLayout();
             this.tab_baker.SuspendLayout();
@@ -123,7 +133,8 @@
             this.fileToolStripMenuItem,
             this.stripitem_settings,
             this.clearOutputToolStripMenuItem,
-            this.killProcessToolStripMenuItem});
+            this.killProcessToolStripMenuItem,
+            this.infoToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(858, 24);
@@ -251,6 +262,15 @@
             // 
             // tab_cooker
             // 
+            this.tab_cooker.Controls.Add(this.btn_cooker_includes_select);
+            this.tab_cooker.Controls.Add(this.txt_cooker_includes);
+            this.tab_cooker.Controls.Add(this.label23);
+            this.tab_cooker.Controls.Add(this.txt_cooker_alias);
+            this.tab_cooker.Controls.Add(this.label22);
+            this.tab_cooker.Controls.Add(this.txt_cooker_sizelimit);
+            this.tab_cooker.Controls.Add(this.label21);
+            this.tab_cooker.Controls.Add(this.txt_cooker_output_name);
+            this.tab_cooker.Controls.Add(this.label20);
             this.tab_cooker.Controls.Add(this.btn_cooker_output_folder);
             this.tab_cooker.Controls.Add(this.txt_cooker_output_folder);
             this.tab_cooker.Controls.Add(this.label19);
@@ -276,7 +296,7 @@
             // btn_cooker_output_folder
             // 
             this.btn_cooker_output_folder.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_cooker_output_folder.Location = new System.Drawing.Point(788, 41);
+            this.btn_cooker_output_folder.Location = new System.Drawing.Point(788, 46);
             this.btn_cooker_output_folder.Name = "btn_cooker_output_folder";
             this.btn_cooker_output_folder.Size = new System.Drawing.Size(32, 20);
             this.btn_cooker_output_folder.TabIndex = 15;
@@ -286,7 +306,9 @@
             // 
             // txt_cooker_output_folder
             // 
-            this.txt_cooker_output_folder.Location = new System.Drawing.Point(252, 41);
+            this.txt_cooker_output_folder.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_cooker_output_folder.Location = new System.Drawing.Point(252, 46);
             this.txt_cooker_output_folder.Name = "txt_cooker_output_folder";
             this.txt_cooker_output_folder.Size = new System.Drawing.Size(530, 20);
             this.txt_cooker_output_folder.TabIndex = 14;
@@ -295,7 +317,7 @@
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(175, 45);
+            this.label19.Location = new System.Drawing.Point(175, 50);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(71, 13);
             this.label19.TabIndex = 13;
@@ -325,7 +347,7 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(175, 11);
+            this.label18.Location = new System.Drawing.Point(193, 11);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(53, 13);
             this.label18.TabIndex = 10;
@@ -455,7 +477,6 @@
             // 
             // tab_render
             // 
-            this.tab_render.Controls.Add(this.btn_render_open_output);
             this.tab_render.Controls.Add(this.txt_render_values);
             this.tab_render.Controls.Add(this.label17);
             this.tab_render.Controls.Add(this.txt_render_pixel_size);
@@ -501,15 +522,6 @@
             this.tab_render.Text = "sbsrender";
             this.tab_render.UseVisualStyleBackColor = true;
             // 
-            // btn_render_open_output
-            // 
-            this.btn_render_open_output.Location = new System.Drawing.Point(197, 233);
-            this.btn_render_open_output.Name = "btn_render_open_output";
-            this.btn_render_open_output.Size = new System.Drawing.Size(302, 23);
-            this.btn_render_open_output.TabIndex = 39;
-            this.btn_render_open_output.Text = "Open Output Folder";
-            this.btn_render_open_output.UseVisualStyleBackColor = true;
-            // 
             // txt_render_values
             // 
             this.txt_render_values.Location = new System.Drawing.Point(277, 159);
@@ -521,7 +533,7 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(194, 163);
+            this.label17.Location = new System.Drawing.Point(194, 162);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(61, 13);
             this.label17.TabIndex = 37;
@@ -557,9 +569,9 @@
             this.label15.AutoSize = true;
             this.label15.Location = new System.Drawing.Point(194, 188);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(60, 13);
+            this.label15.Size = new System.Drawing.Size(63, 13);
             this.label15.TabIndex = 33;
-            this.label15.Text = "Resolution:";
+            this.label15.Text = "Output size:";
             // 
             // btn_render_entry_path_select
             // 
@@ -602,7 +614,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(194, 131);
+            this.label13.Location = new System.Drawing.Point(194, 130);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(68, 13);
             this.label13.TabIndex = 28;
@@ -750,6 +762,7 @@
             // combo_render_compression
             // 
             this.combo_render_compression.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.combo_render_compression.Enabled = false;
             this.combo_render_compression.Items.AddRange(new object[] {
             "",
             "raw",
@@ -859,7 +872,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(194, 11);
+            this.label3.Location = new System.Drawing.Point(194, 9);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(53, 13);
             this.label3.TabIndex = 6;
@@ -984,6 +997,106 @@
             this.btn_run.UseVisualStyleBackColor = true;
             this.btn_run.Click += new System.EventHandler(this.btn_run_Click);
             // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(175, 76);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(71, 13);
+            this.label20.TabIndex = 16;
+            this.label20.Text = "Output name:";
+            // 
+            // txt_cooker_output_name
+            // 
+            this.txt_cooker_output_name.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_cooker_output_name.Location = new System.Drawing.Point(252, 73);
+            this.txt_cooker_output_name.Name = "txt_cooker_output_name";
+            this.txt_cooker_output_name.Size = new System.Drawing.Size(568, 20);
+            this.txt_cooker_output_name.TabIndex = 17;
+            this.txt_cooker_output_name.TextChanged += new System.EventHandler(this.txt_cooker_output_name_TextChanged);
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(6, 209);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(50, 13);
+            this.label21.TabIndex = 18;
+            this.label21.Text = "Size limit:";
+            // 
+            // txt_cooker_sizelimit
+            // 
+            this.txt_cooker_sizelimit.Location = new System.Drawing.Point(62, 206);
+            this.txt_cooker_sizelimit.Name = "txt_cooker_sizelimit";
+            this.txt_cooker_sizelimit.Size = new System.Drawing.Size(100, 20);
+            this.txt_cooker_sizelimit.TabIndex = 19;
+            this.txt_cooker_sizelimit.TextChanged += new System.EventHandler(this.txt_cooker_sizelimit_TextChanged);
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(214, 123);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(32, 13);
+            this.label22.TabIndex = 20;
+            this.label22.Text = "Alias:";
+            // 
+            // txt_cooker_alias
+            // 
+            this.txt_cooker_alias.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_cooker_alias.Location = new System.Drawing.Point(252, 119);
+            this.txt_cooker_alias.Name = "txt_cooker_alias";
+            this.txt_cooker_alias.Size = new System.Drawing.Size(568, 20);
+            this.txt_cooker_alias.TabIndex = 21;
+            this.txt_cooker_alias.TextChanged += new System.EventHandler(this.txt_cooker_alias_TextChanged);
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(193, 148);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(50, 13);
+            this.label23.TabIndex = 22;
+            this.label23.Text = "Includes:";
+            // 
+            // txt_cooker_includes
+            // 
+            this.txt_cooker_includes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_cooker_includes.Location = new System.Drawing.Point(252, 145);
+            this.txt_cooker_includes.Name = "txt_cooker_includes";
+            this.txt_cooker_includes.Size = new System.Drawing.Size(530, 20);
+            this.txt_cooker_includes.TabIndex = 23;
+            this.txt_cooker_includes.TextChanged += new System.EventHandler(this.txt_cooker_includes_TextChanged);
+            // 
+            // btn_cooker_includes_select
+            // 
+            this.btn_cooker_includes_select.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_cooker_includes_select.Location = new System.Drawing.Point(788, 143);
+            this.btn_cooker_includes_select.Name = "btn_cooker_includes_select";
+            this.btn_cooker_includes_select.Size = new System.Drawing.Size(32, 23);
+            this.btn_cooker_includes_select.TabIndex = 24;
+            this.btn_cooker_includes_select.Text = "...";
+            this.btn_cooker_includes_select.UseVisualStyleBackColor = true;
+            this.btn_cooker_includes_select.Click += new System.EventHandler(this.btn_cooker_includes_select_Click);
+            // 
+            // infoToolStripMenuItem
+            // 
+            this.infoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.creditsToolStripMenuItem});
+            this.infoToolStripMenuItem.Name = "infoToolStripMenuItem";
+            this.infoToolStripMenuItem.Size = new System.Drawing.Size(40, 20);
+            this.infoToolStripMenuItem.Text = "Info";
+            // 
+            // creditsToolStripMenuItem
+            // 
+            this.creditsToolStripMenuItem.Name = "creditsToolStripMenuItem";
+            this.creditsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.creditsToolStripMenuItem.Text = "Credits";
+            this.creditsToolStripMenuItem.Click += new System.EventHandler(this.creditsToolStripMenuItem_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1083,7 +1196,6 @@
         private System.Windows.Forms.ToolStripMenuItem exportAsBATToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
-        private System.Windows.Forms.Button btn_render_open_output;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripMenuItem openOutputFolderToolStripMenuItem;
         private System.Windows.Forms.CheckBox check_cooker_output_size;
@@ -1098,6 +1210,17 @@
         private System.Windows.Forms.Button btn_cooker_output_folder;
         private System.Windows.Forms.TextBox txt_cooker_output_folder;
         private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.TextBox txt_cooker_output_name;
+        private System.Windows.Forms.TextBox txt_cooker_sizelimit;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.TextBox txt_cooker_alias;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Button btn_cooker_includes_select;
+        private System.Windows.Forms.TextBox txt_cooker_includes;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.ToolStripMenuItem infoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem creditsToolStripMenuItem;
     }
 }
 
