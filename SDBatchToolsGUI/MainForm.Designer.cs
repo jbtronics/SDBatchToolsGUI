@@ -39,11 +39,22 @@
             this.stripitem_settings = new System.Windows.Forms.ToolStripMenuItem();
             this.clearOutputToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.killProcessToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.infoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.creditsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tab_manager = new System.Windows.Forms.TabControl();
             this.tab_baker = new System.Windows.Forms.TabPage();
             this.btn_baker_help = new System.Windows.Forms.Button();
             this.btn_baker_version = new System.Windows.Forms.Button();
             this.tab_cooker = new System.Windows.Forms.TabPage();
+            this.btn_cooker_includes_select = new System.Windows.Forms.Button();
+            this.txt_cooker_includes = new System.Windows.Forms.TextBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.txt_cooker_alias = new System.Windows.Forms.TextBox();
+            this.label22 = new System.Windows.Forms.Label();
+            this.txt_cooker_sizelimit = new System.Windows.Forms.TextBox();
+            this.label21 = new System.Windows.Forms.Label();
+            this.txt_cooker_output_name = new System.Windows.Forms.TextBox();
+            this.label20 = new System.Windows.Forms.Label();
             this.btn_cooker_output_folder = new System.Windows.Forms.Button();
             this.txt_cooker_output_folder = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
@@ -106,17 +117,19 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txt_preview = new System.Windows.Forms.TextBox();
             this.btn_run = new System.Windows.Forms.Button();
-            this.label20 = new System.Windows.Forms.Label();
-            this.txt_cooker_output_name = new System.Windows.Forms.TextBox();
-            this.label21 = new System.Windows.Forms.Label();
-            this.txt_cooker_sizelimit = new System.Windows.Forms.TextBox();
-            this.label22 = new System.Windows.Forms.Label();
-            this.txt_cooker_alias = new System.Windows.Forms.TextBox();
-            this.label23 = new System.Windows.Forms.Label();
-            this.txt_cooker_includes = new System.Windows.Forms.TextBox();
-            this.btn_cooker_includes_select = new System.Windows.Forms.Button();
-            this.infoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.creditsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.group_mutator_mode = new System.Windows.Forms.GroupBox();
+            this.combo_mutator_mode = new System.Windows.Forms.ComboBox();
+            this.txt_mutator_output_name = new System.Windows.Forms.TextBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.btn_output_path_select = new System.Windows.Forms.Button();
+            this.txt_mutator_output_path = new System.Windows.Forms.TextBox();
+            this.label25 = new System.Windows.Forms.Label();
+            this.btn_mutator_input_select = new System.Windows.Forms.Button();
+            this.label26 = new System.Windows.Forms.Label();
+            this.txt_mutator_input = new System.Windows.Forms.TextBox();
+            this.check_mutator_hide_params = new System.Windows.Forms.CheckBox();
+            this.check_mutator_merge = new System.Windows.Forms.CheckBox();
+            this.check_mutator_depend = new System.Windows.Forms.CheckBox();
             this.menuStrip1.SuspendLayout();
             this.tab_manager.SuspendLayout();
             this.tab_baker.SuspendLayout();
@@ -125,6 +138,7 @@
             this.tab_render.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numeric_render_budget)).BeginInit();
             this.group_render_mode.SuspendLayout();
+            this.group_mutator_mode.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -213,6 +227,21 @@
             this.killProcessToolStripMenuItem.Text = "Kill Process";
             this.killProcessToolStripMenuItem.Click += new System.EventHandler(this.killProcessToolStripMenuItem_Click);
             // 
+            // infoToolStripMenuItem
+            // 
+            this.infoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.creditsToolStripMenuItem});
+            this.infoToolStripMenuItem.Name = "infoToolStripMenuItem";
+            this.infoToolStripMenuItem.Size = new System.Drawing.Size(40, 20);
+            this.infoToolStripMenuItem.Text = "Info";
+            // 
+            // creditsToolStripMenuItem
+            // 
+            this.creditsToolStripMenuItem.Name = "creditsToolStripMenuItem";
+            this.creditsToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
+            this.creditsToolStripMenuItem.Text = "Credits";
+            this.creditsToolStripMenuItem.Click += new System.EventHandler(this.creditsToolStripMenuItem_Click);
+            // 
             // tab_manager
             // 
             this.tab_manager.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -292,6 +321,91 @@
             this.tab_cooker.TabIndex = 1;
             this.tab_cooker.Text = "sbscooker";
             this.tab_cooker.UseVisualStyleBackColor = true;
+            // 
+            // btn_cooker_includes_select
+            // 
+            this.btn_cooker_includes_select.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_cooker_includes_select.Location = new System.Drawing.Point(788, 143);
+            this.btn_cooker_includes_select.Name = "btn_cooker_includes_select";
+            this.btn_cooker_includes_select.Size = new System.Drawing.Size(32, 23);
+            this.btn_cooker_includes_select.TabIndex = 24;
+            this.btn_cooker_includes_select.Text = "...";
+            this.btn_cooker_includes_select.UseVisualStyleBackColor = true;
+            this.btn_cooker_includes_select.Click += new System.EventHandler(this.btn_cooker_includes_select_Click);
+            // 
+            // txt_cooker_includes
+            // 
+            this.txt_cooker_includes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_cooker_includes.Location = new System.Drawing.Point(252, 145);
+            this.txt_cooker_includes.Name = "txt_cooker_includes";
+            this.txt_cooker_includes.Size = new System.Drawing.Size(530, 20);
+            this.txt_cooker_includes.TabIndex = 23;
+            this.txt_cooker_includes.TextChanged += new System.EventHandler(this.txt_cooker_includes_TextChanged);
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(193, 148);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(50, 13);
+            this.label23.TabIndex = 22;
+            this.label23.Text = "Includes:";
+            // 
+            // txt_cooker_alias
+            // 
+            this.txt_cooker_alias.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_cooker_alias.Location = new System.Drawing.Point(252, 119);
+            this.txt_cooker_alias.Name = "txt_cooker_alias";
+            this.txt_cooker_alias.Size = new System.Drawing.Size(568, 20);
+            this.txt_cooker_alias.TabIndex = 21;
+            this.txt_cooker_alias.TextChanged += new System.EventHandler(this.txt_cooker_alias_TextChanged);
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(214, 123);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(32, 13);
+            this.label22.TabIndex = 20;
+            this.label22.Text = "Alias:";
+            // 
+            // txt_cooker_sizelimit
+            // 
+            this.txt_cooker_sizelimit.Location = new System.Drawing.Point(62, 206);
+            this.txt_cooker_sizelimit.Name = "txt_cooker_sizelimit";
+            this.txt_cooker_sizelimit.Size = new System.Drawing.Size(100, 20);
+            this.txt_cooker_sizelimit.TabIndex = 19;
+            this.txt_cooker_sizelimit.TextChanged += new System.EventHandler(this.txt_cooker_sizelimit_TextChanged);
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(6, 209);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(50, 13);
+            this.label21.TabIndex = 18;
+            this.label21.Text = "Size limit:";
+            // 
+            // txt_cooker_output_name
+            // 
+            this.txt_cooker_output_name.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_cooker_output_name.Location = new System.Drawing.Point(252, 73);
+            this.txt_cooker_output_name.Name = "txt_cooker_output_name";
+            this.txt_cooker_output_name.Size = new System.Drawing.Size(568, 20);
+            this.txt_cooker_output_name.TabIndex = 17;
+            this.txt_cooker_output_name.TextChanged += new System.EventHandler(this.txt_cooker_output_name_TextChanged);
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(175, 76);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(71, 13);
+            this.label20.TabIndex = 16;
+            this.label20.Text = "Output name:";
             // 
             // btn_cooker_output_folder
             // 
@@ -445,6 +559,18 @@
             // 
             // tab_mutator
             // 
+            this.tab_mutator.Controls.Add(this.check_mutator_depend);
+            this.tab_mutator.Controls.Add(this.check_mutator_merge);
+            this.tab_mutator.Controls.Add(this.check_mutator_hide_params);
+            this.tab_mutator.Controls.Add(this.txt_mutator_output_name);
+            this.tab_mutator.Controls.Add(this.label24);
+            this.tab_mutator.Controls.Add(this.btn_output_path_select);
+            this.tab_mutator.Controls.Add(this.txt_mutator_output_path);
+            this.tab_mutator.Controls.Add(this.label25);
+            this.tab_mutator.Controls.Add(this.btn_mutator_input_select);
+            this.tab_mutator.Controls.Add(this.label26);
+            this.tab_mutator.Controls.Add(this.txt_mutator_input);
+            this.tab_mutator.Controls.Add(this.group_mutator_mode);
             this.tab_mutator.Controls.Add(this.btn_mutator_help);
             this.tab_mutator.Controls.Add(this.btn_mutator_version);
             this.tab_mutator.Location = new System.Drawing.Point(4, 22);
@@ -997,105 +1123,147 @@
             this.btn_run.UseVisualStyleBackColor = true;
             this.btn_run.Click += new System.EventHandler(this.btn_run_Click);
             // 
-            // label20
+            // group_mutator_mode
             // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(175, 76);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(71, 13);
-            this.label20.TabIndex = 16;
-            this.label20.Text = "Output name:";
+            this.group_mutator_mode.Controls.Add(this.combo_mutator_mode);
+            this.group_mutator_mode.Location = new System.Drawing.Point(7, 36);
+            this.group_mutator_mode.Name = "group_mutator_mode";
+            this.group_mutator_mode.Size = new System.Drawing.Size(155, 51);
+            this.group_mutator_mode.TabIndex = 4;
+            this.group_mutator_mode.TabStop = false;
+            this.group_mutator_mode.Text = "Mode";
             // 
-            // txt_cooker_output_name
+            // combo_mutator_mode
             // 
-            this.txt_cooker_output_name.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.combo_mutator_mode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.combo_mutator_mode.FormattingEnabled = true;
+            this.combo_mutator_mode.Items.AddRange(new object[] {
+            "graph-parameters-editor",
+            "info",
+            "specialization",
+            "update"});
+            this.combo_mutator_mode.Location = new System.Drawing.Point(7, 20);
+            this.combo_mutator_mode.Name = "combo_mutator_mode";
+            this.combo_mutator_mode.Size = new System.Drawing.Size(142, 21);
+            this.combo_mutator_mode.TabIndex = 0;
+            this.combo_mutator_mode.SelectedIndexChanged += new System.EventHandler(this.combo_mutator_mode_SelectedIndexChanged);
+            // 
+            // txt_mutator_output_name
+            // 
+            this.txt_mutator_output_name.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_cooker_output_name.Location = new System.Drawing.Point(252, 73);
-            this.txt_cooker_output_name.Name = "txt_cooker_output_name";
-            this.txt_cooker_output_name.Size = new System.Drawing.Size(568, 20);
-            this.txt_cooker_output_name.TabIndex = 17;
-            this.txt_cooker_output_name.TextChanged += new System.EventHandler(this.txt_cooker_output_name_TextChanged);
+            this.txt_mutator_output_name.Location = new System.Drawing.Point(274, 62);
+            this.txt_mutator_output_name.Name = "txt_mutator_output_name";
+            this.txt_mutator_output_name.Size = new System.Drawing.Size(546, 20);
+            this.txt_mutator_output_name.TabIndex = 32;
+            this.txt_mutator_output_name.TextChanged += new System.EventHandler(this.txt_mutator_output_name_TextChanged);
             // 
-            // label21
+            // label24
             // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(6, 209);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(50, 13);
-            this.label21.TabIndex = 18;
-            this.label21.Text = "Size limit:";
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(190, 65);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(73, 13);
+            this.label24.TabIndex = 31;
+            this.label24.Text = "Output Name:";
             // 
-            // txt_cooker_sizelimit
+            // btn_output_path_select
             // 
-            this.txt_cooker_sizelimit.Location = new System.Drawing.Point(62, 206);
-            this.txt_cooker_sizelimit.Name = "txt_cooker_sizelimit";
-            this.txt_cooker_sizelimit.Size = new System.Drawing.Size(100, 20);
-            this.txt_cooker_sizelimit.TabIndex = 19;
-            this.txt_cooker_sizelimit.TextChanged += new System.EventHandler(this.txt_cooker_sizelimit_TextChanged);
+            this.btn_output_path_select.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_output_path_select.Location = new System.Drawing.Point(788, 32);
+            this.btn_output_path_select.Name = "btn_output_path_select";
+            this.btn_output_path_select.Size = new System.Drawing.Size(32, 20);
+            this.btn_output_path_select.TabIndex = 30;
+            this.btn_output_path_select.Text = "...";
+            this.btn_output_path_select.UseVisualStyleBackColor = true;
+            this.btn_output_path_select.Click += new System.EventHandler(this.btn_output_path_select_Click);
             // 
-            // label22
+            // txt_mutator_output_path
             // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(214, 123);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(32, 13);
-            this.label22.TabIndex = 20;
-            this.label22.Text = "Alias:";
-            // 
-            // txt_cooker_alias
-            // 
-            this.txt_cooker_alias.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txt_mutator_output_path.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_cooker_alias.Location = new System.Drawing.Point(252, 119);
-            this.txt_cooker_alias.Name = "txt_cooker_alias";
-            this.txt_cooker_alias.Size = new System.Drawing.Size(568, 20);
-            this.txt_cooker_alias.TabIndex = 21;
-            this.txt_cooker_alias.TextChanged += new System.EventHandler(this.txt_cooker_alias_TextChanged);
+            this.txt_mutator_output_path.Location = new System.Drawing.Point(274, 33);
+            this.txt_mutator_output_path.Name = "txt_mutator_output_path";
+            this.txt_mutator_output_path.Size = new System.Drawing.Size(504, 20);
+            this.txt_mutator_output_path.TabIndex = 29;
+            this.txt_mutator_output_path.TextChanged += new System.EventHandler(this.txt_mutator_output_path_TextChanged);
             // 
-            // label23
+            // label25
             // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(193, 148);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(50, 13);
-            this.label23.TabIndex = 22;
-            this.label23.Text = "Includes:";
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(190, 38);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(67, 13);
+            this.label25.TabIndex = 28;
+            this.label25.Text = "Output Path:";
+            this.label25.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // txt_cooker_includes
+            // btn_mutator_input_select
             // 
-            this.txt_cooker_includes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.btn_mutator_input_select.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_mutator_input_select.Location = new System.Drawing.Point(788, 6);
+            this.btn_mutator_input_select.Name = "btn_mutator_input_select";
+            this.btn_mutator_input_select.Size = new System.Drawing.Size(32, 20);
+            this.btn_mutator_input_select.TabIndex = 27;
+            this.btn_mutator_input_select.Text = "...";
+            this.btn_mutator_input_select.UseVisualStyleBackColor = true;
+            this.btn_mutator_input_select.Click += new System.EventHandler(this.btn_mutator_input_select_Click);
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(190, 9);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(53, 13);
+            this.label26.TabIndex = 26;
+            this.label26.Text = "Input File:";
+            this.label26.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // txt_mutator_input
+            // 
+            this.txt_mutator_input.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_cooker_includes.Location = new System.Drawing.Point(252, 145);
-            this.txt_cooker_includes.Name = "txt_cooker_includes";
-            this.txt_cooker_includes.Size = new System.Drawing.Size(530, 20);
-            this.txt_cooker_includes.TabIndex = 23;
-            this.txt_cooker_includes.TextChanged += new System.EventHandler(this.txt_cooker_includes_TextChanged);
+            this.txt_mutator_input.Location = new System.Drawing.Point(273, 6);
+            this.txt_mutator_input.Name = "txt_mutator_input";
+            this.txt_mutator_input.Size = new System.Drawing.Size(505, 20);
+            this.txt_mutator_input.TabIndex = 25;
+            this.txt_mutator_input.TextChanged += new System.EventHandler(this.txt_mutator_input_TextChanged);
             // 
-            // btn_cooker_includes_select
+            // check_mutator_hide_params
             // 
-            this.btn_cooker_includes_select.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_cooker_includes_select.Location = new System.Drawing.Point(788, 143);
-            this.btn_cooker_includes_select.Name = "btn_cooker_includes_select";
-            this.btn_cooker_includes_select.Size = new System.Drawing.Size(32, 23);
-            this.btn_cooker_includes_select.TabIndex = 24;
-            this.btn_cooker_includes_select.Text = "...";
-            this.btn_cooker_includes_select.UseVisualStyleBackColor = true;
-            this.btn_cooker_includes_select.Click += new System.EventHandler(this.btn_cooker_includes_select_Click);
+            this.check_mutator_hide_params.AutoSize = true;
+            this.check_mutator_hide_params.Enabled = false;
+            this.check_mutator_hide_params.Location = new System.Drawing.Point(6, 94);
+            this.check_mutator_hide_params.Name = "check_mutator_hide_params";
+            this.check_mutator_hide_params.Size = new System.Drawing.Size(104, 17);
+            this.check_mutator_hide_params.TabIndex = 33;
+            this.check_mutator_hide_params.Text = "Hide Parameters";
+            this.check_mutator_hide_params.UseVisualStyleBackColor = true;
+            this.check_mutator_hide_params.CheckedChanged += new System.EventHandler(this.check_mutator_hide_params_CheckedChanged);
             // 
-            // infoToolStripMenuItem
+            // check_mutator_merge
             // 
-            this.infoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.creditsToolStripMenuItem});
-            this.infoToolStripMenuItem.Name = "infoToolStripMenuItem";
-            this.infoToolStripMenuItem.Size = new System.Drawing.Size(40, 20);
-            this.infoToolStripMenuItem.Text = "Info";
+            this.check_mutator_merge.AutoSize = true;
+            this.check_mutator_merge.Enabled = false;
+            this.check_mutator_merge.Location = new System.Drawing.Point(6, 118);
+            this.check_mutator_merge.Name = "check_mutator_merge";
+            this.check_mutator_merge.Size = new System.Drawing.Size(91, 17);
+            this.check_mutator_merge.TabIndex = 34;
+            this.check_mutator_merge.Text = "Output Merge";
+            this.check_mutator_merge.UseVisualStyleBackColor = true;
+            this.check_mutator_merge.CheckedChanged += new System.EventHandler(this.check_mutator_merge_CheckedChanged);
             // 
-            // creditsToolStripMenuItem
+            // check_mutator_depend
             // 
-            this.creditsToolStripMenuItem.Name = "creditsToolStripMenuItem";
-            this.creditsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.creditsToolStripMenuItem.Text = "Credits";
-            this.creditsToolStripMenuItem.Click += new System.EventHandler(this.creditsToolStripMenuItem_Click);
+            this.check_mutator_depend.AutoSize = true;
+            this.check_mutator_depend.Enabled = false;
+            this.check_mutator_depend.Location = new System.Drawing.Point(6, 141);
+            this.check_mutator_depend.Name = "check_mutator_depend";
+            this.check_mutator_depend.Size = new System.Drawing.Size(104, 17);
+            this.check_mutator_depend.TabIndex = 35;
+            this.check_mutator_depend.Text = "No Dependency";
+            this.check_mutator_depend.UseVisualStyleBackColor = true;
+            this.check_mutator_depend.CheckedChanged += new System.EventHandler(this.check_mutator_depend_CheckedChanged);
             // 
             // MainForm
             // 
@@ -1120,11 +1288,13 @@
             this.tab_cooker.ResumeLayout(false);
             this.tab_cooker.PerformLayout();
             this.tab_mutator.ResumeLayout(false);
+            this.tab_mutator.PerformLayout();
             this.tab_render.ResumeLayout(false);
             this.tab_render.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numeric_render_budget)).EndInit();
             this.group_render_mode.ResumeLayout(false);
             this.group_render_mode.PerformLayout();
+            this.group_mutator_mode.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1221,6 +1391,19 @@
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.ToolStripMenuItem infoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem creditsToolStripMenuItem;
+        private System.Windows.Forms.GroupBox group_mutator_mode;
+        private System.Windows.Forms.ComboBox combo_mutator_mode;
+        private System.Windows.Forms.TextBox txt_mutator_output_name;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Button btn_output_path_select;
+        private System.Windows.Forms.TextBox txt_mutator_output_path;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Button btn_mutator_input_select;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.TextBox txt_mutator_input;
+        private System.Windows.Forms.CheckBox check_mutator_depend;
+        private System.Windows.Forms.CheckBox check_mutator_merge;
+        private System.Windows.Forms.CheckBox check_mutator_hide_params;
     }
 }
 

@@ -22,13 +22,12 @@ namespace SDBatchToolsHelper
 {
     public class Sbsmutator : IBatchTool
     {
-        private string _inputpath;
-        private string _outputpath;
-        private string _presets_path;
+        private string _inputpath = "";
+        private string _outputpath = "";
+        private string _presets_path = ""; 
 
         public enum Modes
         {
-            unset,
             graph_parameters_editor,
             info,
             specialization,
@@ -40,7 +39,7 @@ namespace SDBatchToolsHelper
 
         }
 
-        public Modes Mode { get; set; } = Modes.unset;
+        public Modes Mode { get; set; } = Modes.info;
 
         public bool NoDependency { get; set; } = false;
         public bool OutputMerge { get; set; } = false;
@@ -64,7 +63,7 @@ namespace SDBatchToolsHelper
             }
             set
             {
-                _inputpath = Tools.formatPath(_inputpath);
+                _inputpath = Tools.formatPath(value);
             }
         }
 
@@ -97,7 +96,7 @@ namespace SDBatchToolsHelper
 
             if(Mode == Modes.graph_parameters_editor)
             {
-                s += " --graph-parameters-editor";
+                s += " graph-parameters-editor";
 
                 if (InputFile != "")
                     s += " --input " + InputFile;
@@ -126,12 +125,15 @@ namespace SDBatchToolsHelper
 
             else if (Mode == Modes.info)
             {
+                s += " info";
+
                 if (InputFile != "")
                     s += " --input " + InputFile;
             }
 
             else if (Mode==Modes.specialization)
             {
+                s += " specialization";
 
                 if (InputFile != "")
                     s += " --input " + InputFile;
@@ -165,6 +167,29 @@ namespace SDBatchToolsHelper
 
                 if (HideParameters)
                     s += " --hide-parameters";
+            }
+
+            else if(Mode == Modes.update)
+            {
+                s += " update";
+
+                if (InputFile != "")
+                    s += " --inputs " + InputFile;
+
+                if (OutputPath != "")
+                    s += " --output-path " + OutputPath;
+
+                if (OutputName != "")
+                    s += " --output-name " + OutputName;
+
+                if (PresetsPath != "")
+                    s += " --presets-path " + PresetsPath;
+
+                if (Alias != "")
+                    s += " --alias " + Alias;
+
+                if (NoDependency)
+                    s += " --no-dependency";
             }
 
             return s.Trim();

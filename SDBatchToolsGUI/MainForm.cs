@@ -44,7 +44,7 @@ namespace SDBatchToolsGUI
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            updateCMDLine(_sbsrender);
+            combo_mutator_mode.SelectedIndex = 1;
         }
 
         private void tab_manager_Selected(object sender, TabControlEventArgs e)
@@ -343,6 +343,102 @@ namespace SDBatchToolsGUI
             printHelp(_sbsmutator);
         }
 
+        private void combo_mutator_mode_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(combo_mutator_mode.SelectedIndex==0)
+            {
+                _sbsmutator.Mode = Sbsmutator.Modes.graph_parameters_editor;
+
+                check_mutator_merge.Enabled = false;
+                check_mutator_hide_params.Enabled = false;
+                check_mutator_depend.Enabled = false;
+            }
+
+            else if(combo_mutator_mode.SelectedIndex==1)
+            {
+                _sbsmutator.Mode = Sbsmutator.Modes.info;
+
+                check_mutator_merge.Enabled = false;
+                check_mutator_hide_params.Enabled = false;
+                check_mutator_depend.Enabled = false;
+            }
+
+            else if(combo_mutator_mode.SelectedIndex==2)
+            {
+                _sbsmutator.Mode = Sbsmutator.Modes.specialization;
+
+                check_mutator_merge.Enabled = true;
+                check_mutator_hide_params.Enabled = true;
+                check_mutator_depend.Enabled = false;
+            }
+
+            else if(combo_mutator_mode.SelectedIndex==3)
+            {
+                _sbsmutator.Mode = Sbsmutator.Modes.update;
+
+                check_mutator_merge.Enabled = false;
+                check_mutator_hide_params.Enabled = false;
+                check_mutator_depend.Enabled = true;
+            }
+               
+           updateCMDLine(_sbsmutator);
+            
+           
+        }
+
+        private void check_mutator_hide_params_CheckedChanged(object sender, EventArgs e)
+        {
+            _sbsmutator.HideParameters = check_mutator_hide_params.Checked;
+            updateCMDLine(_sbsmutator);
+        }
+
+        private void check_mutator_merge_CheckedChanged(object sender, EventArgs e)
+        {
+            _sbsmutator.OutputMerge = check_mutator_merge.Checked;
+            updateCMDLine(_sbsmutator);
+        }
+
+        private void check_mutator_depend_CheckedChanged(object sender, EventArgs e)
+        {
+            _sbsmutator.NoDependency = check_mutator_depend.Checked;
+            updateCMDLine(_sbsmutator);
+        }
+
+        private void txt_mutator_input_TextChanged(object sender, EventArgs e)
+        {
+            _sbsmutator.InputFile = txt_mutator_input.Text;
+            updateCMDLine(_sbsmutator);
+        }
+
+        private void txt_mutator_output_path_TextChanged(object sender, EventArgs e)
+        {
+            _sbsmutator.OutputPath = txt_mutator_output_path.Text;
+            updateCMDLine(_sbsmutator);
+        }
+
+        private void txt_mutator_output_name_TextChanged(object sender, EventArgs e)
+        {
+            _sbsmutator.OutputName = txt_mutator_output_name.Text;
+            updateCMDLine(_sbsmutator);
+        }
+
+        private void btn_mutator_input_select_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog1 = new OpenFileDialog();
+            openFileDialog1.Filter = "Substance File|*.sbs";
+            openFileDialog1.Title = "Select a Substance Editor File";
+
+            if (openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                txt_mutator_input.Text = openFileDialog1.FileName;
+
+                if (_sbsmutator.OutputPath == "")
+                {
+                    _sbsmutator.OutputPath = System.IO.Path.GetDirectoryName(openFileDialog1.FileName);
+                    updateCMDLine(_sbsmutator);
+                }
+            }
+        }
         #endregion
 
         #region sbsrender
@@ -584,6 +680,15 @@ namespace SDBatchToolsGUI
             updateCMDLine(_sbsrender);
         }
 
+        private void btn_output_path_select_Click(object sender, EventArgs e)
+        {
+            FolderBrowserDialog fbd = new FolderBrowserDialog();
+            fbd.ShowNewFolderButton = true;
+            if (fbd.ShowDialog() == DialogResult.OK)
+            {
+                txt_mutator_output_path.Text = fbd.SelectedPath;
+            }
+        }
         #endregion
 
         #region Toolstrip
@@ -667,11 +772,10 @@ namespace SDBatchToolsGUI
         }
 
 
-
-
-
-
-
+        private void creditsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new Credits().Show();
+        }
 
 
 
@@ -681,9 +785,6 @@ namespace SDBatchToolsGUI
 
         #endregion
 
-        private void creditsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            new Credits().Show();
-        }
+        
     }
 }
