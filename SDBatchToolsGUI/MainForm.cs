@@ -45,6 +45,18 @@ namespace SDBatchToolsGUI
         private void Form1_Load(object sender, EventArgs e)
         {
             combo_mutator_mode.SelectedIndex = 1;
+
+            //These mutator boxes are disabled by default, default is info mode
+            txt_mutator_alias.Enabled = false;
+            txt_mutator_connect_image.Enabled = false;
+            txt_mutator_connect_input.Enabled = false;
+            txt_mutator_graph_name.Enabled = false;
+            txt_mutator_output_name.Enabled = false;
+            txt_mutator_output_path.Enabled = false;
+            txt_mutator_presets.Enabled = false;
+            txt_mutator_set_default.Enabled = false;
+            txt_mutator_switch_to_constant.Enabled = false;
+            txt_mutator_input_graph.Enabled = false;
         }
 
         private void tab_manager_Selected(object sender, TabControlEventArgs e)
@@ -352,6 +364,17 @@ namespace SDBatchToolsGUI
                 check_mutator_merge.Enabled = false;
                 check_mutator_hide_params.Enabled = false;
                 check_mutator_depend.Enabled = false;
+
+                txt_mutator_alias.Enabled = true;
+                txt_mutator_connect_image.Enabled = false;
+                txt_mutator_connect_input.Enabled = false;
+                txt_mutator_graph_name.Enabled = false;
+                txt_mutator_output_name.Enabled = true;
+                txt_mutator_output_path.Enabled = true;
+                txt_mutator_presets.Enabled = true;
+                txt_mutator_set_default.Enabled = true;
+                txt_mutator_switch_to_constant.Enabled = true;
+                txt_mutator_input_graph.Enabled = true;
             }
 
             else if(combo_mutator_mode.SelectedIndex==1)
@@ -361,6 +384,17 @@ namespace SDBatchToolsGUI
                 check_mutator_merge.Enabled = false;
                 check_mutator_hide_params.Enabled = false;
                 check_mutator_depend.Enabled = false;
+
+                txt_mutator_alias.Enabled = false;
+                txt_mutator_connect_image.Enabled = false;
+                txt_mutator_connect_input.Enabled = false;
+                txt_mutator_graph_name.Enabled = false;
+                txt_mutator_output_name.Enabled = false;
+                txt_mutator_output_path.Enabled = false;
+                txt_mutator_presets.Enabled = false;
+                txt_mutator_set_default.Enabled = false;
+                txt_mutator_switch_to_constant.Enabled = false;
+                txt_mutator_input_graph.Enabled = false;
             }
 
             else if(combo_mutator_mode.SelectedIndex==2)
@@ -370,6 +404,17 @@ namespace SDBatchToolsGUI
                 check_mutator_merge.Enabled = true;
                 check_mutator_hide_params.Enabled = true;
                 check_mutator_depend.Enabled = false;
+
+                txt_mutator_alias.Enabled = true;
+                txt_mutator_connect_image.Enabled = true;
+                txt_mutator_connect_input.Enabled = true;
+                txt_mutator_graph_name.Enabled = true;
+                txt_mutator_output_name.Enabled = true;
+                txt_mutator_output_path.Enabled = true;
+                txt_mutator_presets.Enabled = true;
+                txt_mutator_set_default.Enabled = false;
+                txt_mutator_switch_to_constant.Enabled = false;
+                txt_mutator_input_graph.Enabled = true;
             }
 
             else if(combo_mutator_mode.SelectedIndex==3)
@@ -379,6 +424,17 @@ namespace SDBatchToolsGUI
                 check_mutator_merge.Enabled = false;
                 check_mutator_hide_params.Enabled = false;
                 check_mutator_depend.Enabled = true;
+
+                txt_mutator_alias.Enabled = true;
+                txt_mutator_connect_image.Enabled = false;
+                txt_mutator_connect_input.Enabled = false;
+                txt_mutator_graph_name.Enabled = false;
+                txt_mutator_output_name.Enabled = true;
+                txt_mutator_output_path.Enabled = true;
+                txt_mutator_presets.Enabled = true;
+                txt_mutator_set_default.Enabled = false;
+                txt_mutator_switch_to_constant.Enabled = false;
+                txt_mutator_input_graph.Enabled = false;
             }
                
            updateCMDLine(_sbsmutator);
@@ -438,6 +494,12 @@ namespace SDBatchToolsGUI
                     updateCMDLine(_sbsmutator);
                 }
             }
+        }
+
+        private void txt_mutator_input_graph_TextChanged(object sender, EventArgs e)
+        {
+            _sbsmutator.InputGraph = txt_mutator_input_graph.Text;
+            updateCMDLine(_sbsmutator);
         }
         #endregion
 
@@ -689,6 +751,59 @@ namespace SDBatchToolsGUI
                 txt_mutator_output_path.Text = fbd.SelectedPath;
             }
         }
+
+        private void txt_mutator_graph_name_TextChanged(object sender, EventArgs e)
+        {
+            _sbsmutator.OutputGraphName = txt_mutator_graph_name.Text;
+            updateCMDLine(_sbsmutator);
+        }
+
+        private void txt_mutator_alias_TextChanged(object sender, EventArgs e)
+        {
+            _sbsmutator.Alias = txt_mutator_alias.Text;
+            updateCMDLine(_sbsmutator);
+        }
+
+        private void txt_mutator_presets_TextChanged(object sender, EventArgs e)
+        {
+            _sbsmutator.PresetsPath = txt_mutator_presets.Text;
+            updateCMDLine(_sbsmutator);
+        }
+
+        private void btn_mutator_presets_select_Click(object sender, EventArgs e)
+        {
+            FolderBrowserDialog fbd = new FolderBrowserDialog();
+            fbd.ShowNewFolderButton = true;
+            if (fbd.ShowDialog() == DialogResult.OK)
+            {
+                txt_mutator_presets.Text = fbd.SelectedPath;
+            }
+        }
+
+        private void txt_mutator_switch_to_constant_TextChanged(object sender, EventArgs e)
+        {
+            _sbsmutator.SwitchToConstant = txt_mutator_switch_to_constant.Text;
+            updateCMDLine(_sbsmutator);
+        }
+
+        private void txt_mutator_set_default_TextChanged(object sender, EventArgs e)
+        {
+            _sbsmutator.SetDefaultValue = txt_mutator_set_default.Text;
+            updateCMDLine(_sbsmutator);
+        }
+
+        private void txt_mutator_connect_image_TextChanged(object sender, EventArgs e)
+        {
+            _sbsmutator.ConnectImage = txt_mutator_connect_image.Text;
+            updateCMDLine(_sbsmutator);
+        }
+
+        private void txt_mutator_connect_input_TextChanged(object sender, EventArgs e)
+        {
+            _sbsmutator.ConnectInput = txt_mutator_connect_input.Text;
+            updateCMDLine(_sbsmutator);
+        }
+
         #endregion
 
         #region Toolstrip
@@ -752,16 +867,22 @@ namespace SDBatchToolsGUI
             switch (tab_manager.SelectedTab.Text)
             {
                 case "sbsrender":
-                    if (_sbsrender.OutputPath != "")
+                    if (_sbsrender.OutputPath != "" && _sbsrender.Mode == Sbsrender.SbsrenderModes.render)
                     {
                         Process.Start("explorer.exe", _sbsrender.OutputPath);
                     }
                     break;
                 case "sbsmutator":
-                    
+                    if (_sbsmutator.OutputPath != "" && _sbsmutator.Mode != Sbsmutator.Modes.info)
+                    {
+                        Process.Start("explorer.exe", _sbsmutator.OutputPath);
+                    }
                     break;
                 case "sbscooker":
-                    
+                    if (_sbscooker.OutputPath != "")
+                    {
+                        Process.Start("explorer.exe", _sbscooker.OutputPath);
+                    }
                     break;
                 case "sbsbaker":
 
@@ -776,6 +897,9 @@ namespace SDBatchToolsGUI
         {
             new Credits().Show();
         }
+
+
+
 
 
 

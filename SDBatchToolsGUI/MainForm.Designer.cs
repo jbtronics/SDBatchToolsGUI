@@ -70,6 +70,34 @@
             this.btn_cooker_help = new System.Windows.Forms.Button();
             this.btn_cooker_version = new System.Windows.Forms.Button();
             this.tab_mutator = new System.Windows.Forms.TabPage();
+            this.txt_mutator_connect_input = new System.Windows.Forms.TextBox();
+            this.label33 = new System.Windows.Forms.Label();
+            this.txt_mutator_connect_image = new System.Windows.Forms.TextBox();
+            this.label32 = new System.Windows.Forms.Label();
+            this.txt_mutator_set_default = new System.Windows.Forms.TextBox();
+            this.label31 = new System.Windows.Forms.Label();
+            this.txt_mutator_switch_to_constant = new System.Windows.Forms.TextBox();
+            this.label27 = new System.Windows.Forms.Label();
+            this.btn_mutator_presets_select = new System.Windows.Forms.Button();
+            this.txt_mutator_presets = new System.Windows.Forms.TextBox();
+            this.label30 = new System.Windows.Forms.Label();
+            this.txt_mutator_graph_name = new System.Windows.Forms.TextBox();
+            this.label29 = new System.Windows.Forms.Label();
+            this.txt_mutator_alias = new System.Windows.Forms.TextBox();
+            this.label28 = new System.Windows.Forms.Label();
+            this.check_mutator_depend = new System.Windows.Forms.CheckBox();
+            this.check_mutator_merge = new System.Windows.Forms.CheckBox();
+            this.check_mutator_hide_params = new System.Windows.Forms.CheckBox();
+            this.txt_mutator_output_name = new System.Windows.Forms.TextBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.btn_output_path_select = new System.Windows.Forms.Button();
+            this.txt_mutator_output_path = new System.Windows.Forms.TextBox();
+            this.label25 = new System.Windows.Forms.Label();
+            this.btn_mutator_input_select = new System.Windows.Forms.Button();
+            this.label26 = new System.Windows.Forms.Label();
+            this.txt_mutator_input = new System.Windows.Forms.TextBox();
+            this.group_mutator_mode = new System.Windows.Forms.GroupBox();
+            this.combo_mutator_mode = new System.Windows.Forms.ComboBox();
             this.btn_mutator_help = new System.Windows.Forms.Button();
             this.btn_mutator_version = new System.Windows.Forms.Button();
             this.tab_render = new System.Windows.Forms.TabPage();
@@ -117,28 +145,17 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txt_preview = new System.Windows.Forms.TextBox();
             this.btn_run = new System.Windows.Forms.Button();
-            this.group_mutator_mode = new System.Windows.Forms.GroupBox();
-            this.combo_mutator_mode = new System.Windows.Forms.ComboBox();
-            this.txt_mutator_output_name = new System.Windows.Forms.TextBox();
-            this.label24 = new System.Windows.Forms.Label();
-            this.btn_output_path_select = new System.Windows.Forms.Button();
-            this.txt_mutator_output_path = new System.Windows.Forms.TextBox();
-            this.label25 = new System.Windows.Forms.Label();
-            this.btn_mutator_input_select = new System.Windows.Forms.Button();
-            this.label26 = new System.Windows.Forms.Label();
-            this.txt_mutator_input = new System.Windows.Forms.TextBox();
-            this.check_mutator_hide_params = new System.Windows.Forms.CheckBox();
-            this.check_mutator_merge = new System.Windows.Forms.CheckBox();
-            this.check_mutator_depend = new System.Windows.Forms.CheckBox();
+            this.label34 = new System.Windows.Forms.Label();
+            this.txt_mutator_input_graph = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             this.tab_manager.SuspendLayout();
             this.tab_baker.SuspendLayout();
             this.tab_cooker.SuspendLayout();
             this.tab_mutator.SuspendLayout();
+            this.group_mutator_mode.SuspendLayout();
             this.tab_render.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numeric_render_budget)).BeginInit();
             this.group_render_mode.SuspendLayout();
-            this.group_mutator_mode.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -559,6 +576,23 @@
             // 
             // tab_mutator
             // 
+            this.tab_mutator.Controls.Add(this.label34);
+            this.tab_mutator.Controls.Add(this.txt_mutator_input_graph);
+            this.tab_mutator.Controls.Add(this.txt_mutator_connect_input);
+            this.tab_mutator.Controls.Add(this.label33);
+            this.tab_mutator.Controls.Add(this.txt_mutator_connect_image);
+            this.tab_mutator.Controls.Add(this.label32);
+            this.tab_mutator.Controls.Add(this.txt_mutator_set_default);
+            this.tab_mutator.Controls.Add(this.label31);
+            this.tab_mutator.Controls.Add(this.txt_mutator_switch_to_constant);
+            this.tab_mutator.Controls.Add(this.label27);
+            this.tab_mutator.Controls.Add(this.btn_mutator_presets_select);
+            this.tab_mutator.Controls.Add(this.txt_mutator_presets);
+            this.tab_mutator.Controls.Add(this.label30);
+            this.tab_mutator.Controls.Add(this.txt_mutator_graph_name);
+            this.tab_mutator.Controls.Add(this.label29);
+            this.tab_mutator.Controls.Add(this.txt_mutator_alias);
+            this.tab_mutator.Controls.Add(this.label28);
             this.tab_mutator.Controls.Add(this.check_mutator_depend);
             this.tab_mutator.Controls.Add(this.check_mutator_merge);
             this.tab_mutator.Controls.Add(this.check_mutator_hide_params);
@@ -580,6 +614,288 @@
             this.tab_mutator.TabIndex = 2;
             this.tab_mutator.Text = "sbsmutator";
             this.tab_mutator.UseVisualStyleBackColor = true;
+            // 
+            // txt_mutator_connect_input
+            // 
+            this.txt_mutator_connect_input.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_mutator_connect_input.Location = new System.Drawing.Point(606, 233);
+            this.txt_mutator_connect_input.Name = "txt_mutator_connect_input";
+            this.txt_mutator_connect_input.Size = new System.Drawing.Size(214, 20);
+            this.txt_mutator_connect_input.TabIndex = 53;
+            this.txt_mutator_connect_input.TextChanged += new System.EventHandler(this.txt_mutator_connect_input_TextChanged);
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Location = new System.Drawing.Point(524, 236);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(76, 13);
+            this.label33.TabIndex = 52;
+            this.label33.Text = "Connect input:";
+            // 
+            // txt_mutator_connect_image
+            // 
+            this.txt_mutator_connect_image.Location = new System.Drawing.Point(252, 233);
+            this.txt_mutator_connect_image.Name = "txt_mutator_connect_image";
+            this.txt_mutator_connect_image.Size = new System.Drawing.Size(252, 20);
+            this.txt_mutator_connect_image.TabIndex = 51;
+            this.txt_mutator_connect_image.TextChanged += new System.EventHandler(this.txt_mutator_connect_image_TextChanged);
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(162, 236);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(81, 13);
+            this.label32.TabIndex = 50;
+            this.label32.Text = "Connect image:";
+            // 
+            // txt_mutator_set_default
+            // 
+            this.txt_mutator_set_default.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_mutator_set_default.Location = new System.Drawing.Point(606, 200);
+            this.txt_mutator_set_default.Name = "txt_mutator_set_default";
+            this.txt_mutator_set_default.Size = new System.Drawing.Size(214, 20);
+            this.txt_mutator_set_default.TabIndex = 49;
+            this.txt_mutator_set_default.TextChanged += new System.EventHandler(this.txt_mutator_set_default_TextChanged);
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(510, 203);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(90, 13);
+            this.label31.TabIndex = 48;
+            this.label31.Text = "Set default value:";
+            // 
+            // txt_mutator_switch_to_constant
+            // 
+            this.txt_mutator_switch_to_constant.Location = new System.Drawing.Point(252, 200);
+            this.txt_mutator_switch_to_constant.Name = "txt_mutator_switch_to_constant";
+            this.txt_mutator_switch_to_constant.Size = new System.Drawing.Size(252, 20);
+            this.txt_mutator_switch_to_constant.TabIndex = 47;
+            this.txt_mutator_switch_to_constant.TextChanged += new System.EventHandler(this.txt_mutator_switch_to_constant_TextChanged);
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(149, 203);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(98, 13);
+            this.label27.TabIndex = 46;
+            this.label27.Text = "Switch to constant:";
+            // 
+            // btn_mutator_presets_select
+            // 
+            this.btn_mutator_presets_select.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_mutator_presets_select.Location = new System.Drawing.Point(788, 162);
+            this.btn_mutator_presets_select.Name = "btn_mutator_presets_select";
+            this.btn_mutator_presets_select.Size = new System.Drawing.Size(32, 23);
+            this.btn_mutator_presets_select.TabIndex = 45;
+            this.btn_mutator_presets_select.Text = "...";
+            this.btn_mutator_presets_select.UseVisualStyleBackColor = true;
+            this.btn_mutator_presets_select.Click += new System.EventHandler(this.btn_mutator_presets_select_Click);
+            // 
+            // txt_mutator_presets
+            // 
+            this.txt_mutator_presets.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_mutator_presets.Location = new System.Drawing.Point(252, 164);
+            this.txt_mutator_presets.Name = "txt_mutator_presets";
+            this.txt_mutator_presets.Size = new System.Drawing.Size(530, 20);
+            this.txt_mutator_presets.TabIndex = 44;
+            this.txt_mutator_presets.TextChanged += new System.EventHandler(this.txt_mutator_presets_TextChanged);
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(174, 167);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(69, 13);
+            this.label30.TabIndex = 43;
+            this.label30.Text = "Presets path:";
+            // 
+            // txt_mutator_graph_name
+            // 
+            this.txt_mutator_graph_name.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_mutator_graph_name.Location = new System.Drawing.Point(252, 111);
+            this.txt_mutator_graph_name.Name = "txt_mutator_graph_name";
+            this.txt_mutator_graph_name.Size = new System.Drawing.Size(568, 20);
+            this.txt_mutator_graph_name.TabIndex = 42;
+            this.txt_mutator_graph_name.TextChanged += new System.EventHandler(this.txt_mutator_graph_name_TextChanged);
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(146, 113);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(101, 13);
+            this.label29.TabIndex = 41;
+            this.label29.Text = "Output graph name:";
+            // 
+            // txt_mutator_alias
+            // 
+            this.txt_mutator_alias.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_mutator_alias.Location = new System.Drawing.Point(252, 138);
+            this.txt_mutator_alias.Name = "txt_mutator_alias";
+            this.txt_mutator_alias.Size = new System.Drawing.Size(568, 20);
+            this.txt_mutator_alias.TabIndex = 37;
+            this.txt_mutator_alias.TextChanged += new System.EventHandler(this.txt_mutator_alias_TextChanged);
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(214, 142);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(32, 13);
+            this.label28.TabIndex = 36;
+            this.label28.Text = "Alias:";
+            // 
+            // check_mutator_depend
+            // 
+            this.check_mutator_depend.AutoSize = true;
+            this.check_mutator_depend.Enabled = false;
+            this.check_mutator_depend.Location = new System.Drawing.Point(6, 141);
+            this.check_mutator_depend.Name = "check_mutator_depend";
+            this.check_mutator_depend.Size = new System.Drawing.Size(104, 17);
+            this.check_mutator_depend.TabIndex = 35;
+            this.check_mutator_depend.Text = "No Dependency";
+            this.check_mutator_depend.UseVisualStyleBackColor = true;
+            this.check_mutator_depend.CheckedChanged += new System.EventHandler(this.check_mutator_depend_CheckedChanged);
+            // 
+            // check_mutator_merge
+            // 
+            this.check_mutator_merge.AutoSize = true;
+            this.check_mutator_merge.Enabled = false;
+            this.check_mutator_merge.Location = new System.Drawing.Point(6, 118);
+            this.check_mutator_merge.Name = "check_mutator_merge";
+            this.check_mutator_merge.Size = new System.Drawing.Size(91, 17);
+            this.check_mutator_merge.TabIndex = 34;
+            this.check_mutator_merge.Text = "Output Merge";
+            this.check_mutator_merge.UseVisualStyleBackColor = true;
+            this.check_mutator_merge.CheckedChanged += new System.EventHandler(this.check_mutator_merge_CheckedChanged);
+            // 
+            // check_mutator_hide_params
+            // 
+            this.check_mutator_hide_params.AutoSize = true;
+            this.check_mutator_hide_params.Enabled = false;
+            this.check_mutator_hide_params.Location = new System.Drawing.Point(6, 94);
+            this.check_mutator_hide_params.Name = "check_mutator_hide_params";
+            this.check_mutator_hide_params.Size = new System.Drawing.Size(104, 17);
+            this.check_mutator_hide_params.TabIndex = 33;
+            this.check_mutator_hide_params.Text = "Hide Parameters";
+            this.check_mutator_hide_params.UseVisualStyleBackColor = true;
+            this.check_mutator_hide_params.CheckedChanged += new System.EventHandler(this.check_mutator_hide_params_CheckedChanged);
+            // 
+            // txt_mutator_output_name
+            // 
+            this.txt_mutator_output_name.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_mutator_output_name.Location = new System.Drawing.Point(252, 85);
+            this.txt_mutator_output_name.Name = "txt_mutator_output_name";
+            this.txt_mutator_output_name.Size = new System.Drawing.Size(568, 20);
+            this.txt_mutator_output_name.TabIndex = 32;
+            this.txt_mutator_output_name.TextChanged += new System.EventHandler(this.txt_mutator_output_name_TextChanged);
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(170, 87);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(73, 13);
+            this.label24.TabIndex = 31;
+            this.label24.Text = "Output Name:";
+            // 
+            // btn_output_path_select
+            // 
+            this.btn_output_path_select.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_output_path_select.Location = new System.Drawing.Point(788, 55);
+            this.btn_output_path_select.Name = "btn_output_path_select";
+            this.btn_output_path_select.Size = new System.Drawing.Size(32, 20);
+            this.btn_output_path_select.TabIndex = 30;
+            this.btn_output_path_select.Text = "...";
+            this.btn_output_path_select.UseVisualStyleBackColor = true;
+            this.btn_output_path_select.Click += new System.EventHandler(this.btn_output_path_select_Click);
+            // 
+            // txt_mutator_output_path
+            // 
+            this.txt_mutator_output_path.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_mutator_output_path.Location = new System.Drawing.Point(252, 56);
+            this.txt_mutator_output_path.Name = "txt_mutator_output_path";
+            this.txt_mutator_output_path.Size = new System.Drawing.Size(526, 20);
+            this.txt_mutator_output_path.TabIndex = 29;
+            this.txt_mutator_output_path.TextChanged += new System.EventHandler(this.txt_mutator_output_path_TextChanged);
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(176, 62);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(67, 13);
+            this.label25.TabIndex = 28;
+            this.label25.Text = "Output Path:";
+            this.label25.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // btn_mutator_input_select
+            // 
+            this.btn_mutator_input_select.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_mutator_input_select.Location = new System.Drawing.Point(788, 6);
+            this.btn_mutator_input_select.Name = "btn_mutator_input_select";
+            this.btn_mutator_input_select.Size = new System.Drawing.Size(32, 20);
+            this.btn_mutator_input_select.TabIndex = 27;
+            this.btn_mutator_input_select.Text = "...";
+            this.btn_mutator_input_select.UseVisualStyleBackColor = true;
+            this.btn_mutator_input_select.Click += new System.EventHandler(this.btn_mutator_input_select_Click);
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(190, 11);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(53, 13);
+            this.label26.TabIndex = 26;
+            this.label26.Text = "Input File:";
+            this.label26.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // txt_mutator_input
+            // 
+            this.txt_mutator_input.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_mutator_input.Location = new System.Drawing.Point(252, 6);
+            this.txt_mutator_input.Name = "txt_mutator_input";
+            this.txt_mutator_input.Size = new System.Drawing.Size(526, 20);
+            this.txt_mutator_input.TabIndex = 25;
+            this.txt_mutator_input.TextChanged += new System.EventHandler(this.txt_mutator_input_TextChanged);
+            // 
+            // group_mutator_mode
+            // 
+            this.group_mutator_mode.Controls.Add(this.combo_mutator_mode);
+            this.group_mutator_mode.Location = new System.Drawing.Point(7, 36);
+            this.group_mutator_mode.Name = "group_mutator_mode";
+            this.group_mutator_mode.Size = new System.Drawing.Size(155, 51);
+            this.group_mutator_mode.TabIndex = 4;
+            this.group_mutator_mode.TabStop = false;
+            this.group_mutator_mode.Text = "Mode";
+            // 
+            // combo_mutator_mode
+            // 
+            this.combo_mutator_mode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.combo_mutator_mode.FormattingEnabled = true;
+            this.combo_mutator_mode.Items.AddRange(new object[] {
+            "graph-parameters-editor",
+            "info",
+            "specialization",
+            "update"});
+            this.combo_mutator_mode.Location = new System.Drawing.Point(7, 20);
+            this.combo_mutator_mode.Name = "combo_mutator_mode";
+            this.combo_mutator_mode.Size = new System.Drawing.Size(142, 21);
+            this.combo_mutator_mode.TabIndex = 0;
+            this.combo_mutator_mode.SelectedIndexChanged += new System.EventHandler(this.combo_mutator_mode_SelectedIndexChanged);
             // 
             // btn_mutator_help
             // 
@@ -650,6 +966,8 @@
             // 
             // txt_render_values
             // 
+            this.txt_render_values.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_render_values.Location = new System.Drawing.Point(277, 159);
             this.txt_render_values.Name = "txt_render_values";
             this.txt_render_values.Size = new System.Drawing.Size(543, 20);
@@ -667,6 +985,8 @@
             // 
             // txt_render_pixel_size
             // 
+            this.txt_render_pixel_size.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_render_pixel_size.Location = new System.Drawing.Point(564, 185);
             this.txt_render_pixel_size.Name = "txt_render_pixel_size";
             this.txt_render_pixel_size.Size = new System.Drawing.Size(256, 20);
@@ -1123,147 +1443,25 @@
             this.btn_run.UseVisualStyleBackColor = true;
             this.btn_run.Click += new System.EventHandler(this.btn_run_Click);
             // 
-            // group_mutator_mode
+            // label34
             // 
-            this.group_mutator_mode.Controls.Add(this.combo_mutator_mode);
-            this.group_mutator_mode.Location = new System.Drawing.Point(7, 36);
-            this.group_mutator_mode.Name = "group_mutator_mode";
-            this.group_mutator_mode.Size = new System.Drawing.Size(155, 51);
-            this.group_mutator_mode.TabIndex = 4;
-            this.group_mutator_mode.TabStop = false;
-            this.group_mutator_mode.Text = "Mode";
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(177, 37);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(66, 13);
+            this.label34.TabIndex = 55;
+            this.label34.Text = "Input Graph:";
+            this.label34.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // combo_mutator_mode
+            // txt_mutator_input_graph
             // 
-            this.combo_mutator_mode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.combo_mutator_mode.FormattingEnabled = true;
-            this.combo_mutator_mode.Items.AddRange(new object[] {
-            "graph-parameters-editor",
-            "info",
-            "specialization",
-            "update"});
-            this.combo_mutator_mode.Location = new System.Drawing.Point(7, 20);
-            this.combo_mutator_mode.Name = "combo_mutator_mode";
-            this.combo_mutator_mode.Size = new System.Drawing.Size(142, 21);
-            this.combo_mutator_mode.TabIndex = 0;
-            this.combo_mutator_mode.SelectedIndexChanged += new System.EventHandler(this.combo_mutator_mode_SelectedIndexChanged);
-            // 
-            // txt_mutator_output_name
-            // 
-            this.txt_mutator_output_name.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txt_mutator_input_graph.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_mutator_output_name.Location = new System.Drawing.Point(274, 62);
-            this.txt_mutator_output_name.Name = "txt_mutator_output_name";
-            this.txt_mutator_output_name.Size = new System.Drawing.Size(546, 20);
-            this.txt_mutator_output_name.TabIndex = 32;
-            this.txt_mutator_output_name.TextChanged += new System.EventHandler(this.txt_mutator_output_name_TextChanged);
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(190, 65);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(73, 13);
-            this.label24.TabIndex = 31;
-            this.label24.Text = "Output Name:";
-            // 
-            // btn_output_path_select
-            // 
-            this.btn_output_path_select.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_output_path_select.Location = new System.Drawing.Point(788, 32);
-            this.btn_output_path_select.Name = "btn_output_path_select";
-            this.btn_output_path_select.Size = new System.Drawing.Size(32, 20);
-            this.btn_output_path_select.TabIndex = 30;
-            this.btn_output_path_select.Text = "...";
-            this.btn_output_path_select.UseVisualStyleBackColor = true;
-            this.btn_output_path_select.Click += new System.EventHandler(this.btn_output_path_select_Click);
-            // 
-            // txt_mutator_output_path
-            // 
-            this.txt_mutator_output_path.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_mutator_output_path.Location = new System.Drawing.Point(274, 33);
-            this.txt_mutator_output_path.Name = "txt_mutator_output_path";
-            this.txt_mutator_output_path.Size = new System.Drawing.Size(504, 20);
-            this.txt_mutator_output_path.TabIndex = 29;
-            this.txt_mutator_output_path.TextChanged += new System.EventHandler(this.txt_mutator_output_path_TextChanged);
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(190, 38);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(67, 13);
-            this.label25.TabIndex = 28;
-            this.label25.Text = "Output Path:";
-            this.label25.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // btn_mutator_input_select
-            // 
-            this.btn_mutator_input_select.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_mutator_input_select.Location = new System.Drawing.Point(788, 6);
-            this.btn_mutator_input_select.Name = "btn_mutator_input_select";
-            this.btn_mutator_input_select.Size = new System.Drawing.Size(32, 20);
-            this.btn_mutator_input_select.TabIndex = 27;
-            this.btn_mutator_input_select.Text = "...";
-            this.btn_mutator_input_select.UseVisualStyleBackColor = true;
-            this.btn_mutator_input_select.Click += new System.EventHandler(this.btn_mutator_input_select_Click);
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(190, 9);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(53, 13);
-            this.label26.TabIndex = 26;
-            this.label26.Text = "Input File:";
-            this.label26.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // txt_mutator_input
-            // 
-            this.txt_mutator_input.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_mutator_input.Location = new System.Drawing.Point(273, 6);
-            this.txt_mutator_input.Name = "txt_mutator_input";
-            this.txt_mutator_input.Size = new System.Drawing.Size(505, 20);
-            this.txt_mutator_input.TabIndex = 25;
-            this.txt_mutator_input.TextChanged += new System.EventHandler(this.txt_mutator_input_TextChanged);
-            // 
-            // check_mutator_hide_params
-            // 
-            this.check_mutator_hide_params.AutoSize = true;
-            this.check_mutator_hide_params.Enabled = false;
-            this.check_mutator_hide_params.Location = new System.Drawing.Point(6, 94);
-            this.check_mutator_hide_params.Name = "check_mutator_hide_params";
-            this.check_mutator_hide_params.Size = new System.Drawing.Size(104, 17);
-            this.check_mutator_hide_params.TabIndex = 33;
-            this.check_mutator_hide_params.Text = "Hide Parameters";
-            this.check_mutator_hide_params.UseVisualStyleBackColor = true;
-            this.check_mutator_hide_params.CheckedChanged += new System.EventHandler(this.check_mutator_hide_params_CheckedChanged);
-            // 
-            // check_mutator_merge
-            // 
-            this.check_mutator_merge.AutoSize = true;
-            this.check_mutator_merge.Enabled = false;
-            this.check_mutator_merge.Location = new System.Drawing.Point(6, 118);
-            this.check_mutator_merge.Name = "check_mutator_merge";
-            this.check_mutator_merge.Size = new System.Drawing.Size(91, 17);
-            this.check_mutator_merge.TabIndex = 34;
-            this.check_mutator_merge.Text = "Output Merge";
-            this.check_mutator_merge.UseVisualStyleBackColor = true;
-            this.check_mutator_merge.CheckedChanged += new System.EventHandler(this.check_mutator_merge_CheckedChanged);
-            // 
-            // check_mutator_depend
-            // 
-            this.check_mutator_depend.AutoSize = true;
-            this.check_mutator_depend.Enabled = false;
-            this.check_mutator_depend.Location = new System.Drawing.Point(6, 141);
-            this.check_mutator_depend.Name = "check_mutator_depend";
-            this.check_mutator_depend.Size = new System.Drawing.Size(104, 17);
-            this.check_mutator_depend.TabIndex = 35;
-            this.check_mutator_depend.Text = "No Dependency";
-            this.check_mutator_depend.UseVisualStyleBackColor = true;
-            this.check_mutator_depend.CheckedChanged += new System.EventHandler(this.check_mutator_depend_CheckedChanged);
+            this.txt_mutator_input_graph.Location = new System.Drawing.Point(252, 30);
+            this.txt_mutator_input_graph.Name = "txt_mutator_input_graph";
+            this.txt_mutator_input_graph.Size = new System.Drawing.Size(568, 20);
+            this.txt_mutator_input_graph.TabIndex = 54;
+            this.txt_mutator_input_graph.TextChanged += new System.EventHandler(this.txt_mutator_input_graph_TextChanged);
             // 
             // MainForm
             // 
@@ -1289,12 +1487,12 @@
             this.tab_cooker.PerformLayout();
             this.tab_mutator.ResumeLayout(false);
             this.tab_mutator.PerformLayout();
+            this.group_mutator_mode.ResumeLayout(false);
             this.tab_render.ResumeLayout(false);
             this.tab_render.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numeric_render_budget)).EndInit();
             this.group_render_mode.ResumeLayout(false);
             this.group_render_mode.PerformLayout();
-            this.group_mutator_mode.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1404,6 +1602,23 @@
         private System.Windows.Forms.CheckBox check_mutator_depend;
         private System.Windows.Forms.CheckBox check_mutator_merge;
         private System.Windows.Forms.CheckBox check_mutator_hide_params;
+        private System.Windows.Forms.TextBox txt_mutator_alias;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.TextBox txt_mutator_graph_name;
+        private System.Windows.Forms.Button btn_mutator_presets_select;
+        private System.Windows.Forms.TextBox txt_mutator_presets;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.TextBox txt_mutator_set_default;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.TextBox txt_mutator_switch_to_constant;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.TextBox txt_mutator_connect_image;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.TextBox txt_mutator_connect_input;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.TextBox txt_mutator_input_graph;
     }
 }
 
