@@ -43,7 +43,8 @@ namespace SDBatchToolsHelper
         public string Alias { get; set; } = "";
         public string OutputName { get; set; } = "";
         public string SizeLimit { get; set; } = "";
-
+        public string AdditionalParams { get; set; } = "";
+ 
         public string OutputPath
         {
             get
@@ -120,7 +121,9 @@ namespace SDBatchToolsHelper
 
             if (InputFile!="")
                 s += " --inputs " + InputFile;
-            
+
+            if (AdditionalParams != "")
+                s += " " + AdditionalParams;
 
             return s.Trim();
         }

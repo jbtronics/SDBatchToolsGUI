@@ -633,6 +633,7 @@
             this.txt_cooker_additional.Name = "txt_cooker_additional";
             this.txt_cooker_additional.Size = new System.Drawing.Size(695, 20);
             this.txt_cooker_additional.TabIndex = 32;
+            this.txt_cooker_additional.TextChanged += new System.EventHandler(this.txt_cooker_additional_TextChanged);
             // 
             // label43
             // 
@@ -1779,6 +1780,7 @@
             this.txt_mutator_additional.Name = "txt_mutator_additional";
             this.txt_mutator_additional.Size = new System.Drawing.Size(695, 20);
             this.txt_mutator_additional.TabIndex = 57;
+            this.txt_mutator_additional.TextChanged += new System.EventHandler(this.txt_mutator_additional_TextChanged);
             // 
             // label44
             // 
@@ -1797,6 +1799,7 @@
             this.txt_render_additional.Name = "txt_render_additional";
             this.txt_render_additional.Size = new System.Drawing.Size(511, 20);
             this.txt_render_additional.TabIndex = 40;
+            this.txt_render_additional.TextChanged += new System.EventHandler(this.txt_render_additional_TextChanged);
             // 
             // label45
             // 

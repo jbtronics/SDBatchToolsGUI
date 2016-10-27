@@ -51,7 +51,7 @@ namespace SDBatchToolsHelper
         public string OutputGraphName { get; set; } = "";
         public string ConnectImage { get; set; } = "";
         public string ConnectInput { get; set; } = "";
-        public string AdditionalParameters { get; set; } = "";
+        public string AdditionalParams { get; set; } = "";
         public string SwitchToConstant { get; set; } = "";
         public string SetDefaultValue { get; set; } = "";
    
@@ -119,8 +119,8 @@ namespace SDBatchToolsHelper
                 if (SetDefaultValue != "")
                     s += " --set-default-value " + SetDefaultValue;
 
-                if (AdditionalParameters != "")
-                    s += " " + AdditionalParameters;
+                if (AdditionalParams != "")
+                    s += " " + AdditionalParams;
             }
 
             else if (Mode == Modes.info)

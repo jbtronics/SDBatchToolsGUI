@@ -84,6 +84,8 @@ namespace SDBatchToolsHelper
         public string SetPixelSize { get; set; } = "";
         public string SetSeed { get; set; } = "";
 
+        public string AdditionalParams { get; set; } = "";
+
         public SbsrenderModes Mode { get; set; }
         #endregion
 
@@ -147,8 +149,10 @@ namespace SDBatchToolsHelper
                     s += " --set-value outputsize@" + SetResolution;               
 
                 if (InputFile!="")
-                    s += " --inputs " + InputFile;   
+                    s += " --inputs " + InputFile;
 
+                if (AdditionalParams != "")
+                    s += " " + AdditionalParams;
             }
 
             return s.Trim();

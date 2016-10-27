@@ -393,6 +393,12 @@ namespace SDBatchToolsGUI
             printHelp(_sbscooker);
         }
 
+        private void txt_cooker_additional_TextChanged(object sender, EventArgs e)
+        {
+            _sbscooker.AdditionalParams = txt_cooker_additional.Text;
+            updateCMDLine(_sbscooker);
+        }
+
         private void check_cooker_merge_CheckedChanged(object sender, EventArgs e)
         {
             _sbscooker.Merge = check_cooker_merge.Checked;
@@ -515,6 +521,12 @@ namespace SDBatchToolsGUI
         private void btn_mutator_help_Click(object sender, EventArgs e)
         {
             printHelp(_sbsmutator);
+        }
+
+        private void txt_mutator_additional_TextChanged(object sender, EventArgs e)
+        {
+            _sbsmutator.AdditionalParams = txt_mutator_additional.Text;
+            updateCMDLine(_sbsmutator);
         }
 
         private void combo_mutator_mode_SelectedIndexChanged(object sender, EventArgs e)
@@ -674,6 +686,13 @@ namespace SDBatchToolsGUI
         private void btn_render_help_Click(object sender, EventArgs e)
         {
             printHelp(_sbsrender);
+        }
+
+
+        private void txt_render_additional_TextChanged(object sender, EventArgs e)
+        {
+            _sbsrender.AdditionalParams = txt_render_additional.Text;
+            updateCMDLine(_sbsrender);
         }
 
         private void radio_render_info_CheckedChanged(object sender, EventArgs e)
@@ -1066,7 +1085,11 @@ namespace SDBatchToolsGUI
 
 
 
+
         #endregion
+
+
+       
 
         
     }
