@@ -20,7 +20,7 @@ using System.Threading.Tasks;
 
 namespace SDBatchToolsHelper
 {
-    public class Tools
+    static public class Tools
     {
         public static string formatPath(String p)
         {
@@ -38,5 +38,18 @@ namespace SDBatchToolsHelper
             return p.Replace("_", "-");
         }
 
+        public enum RenderOutputFormat
+        {
+            unset, dds, bmp, ico, jpg, jif, jpeg, jpe, png, tga, targa, tif, tiff, wap, wbmp, wbm, hdr, exr, jp2, webp, jxr, wdp, hdp
+        }
+
+        public enum DDSCompression
+        {
+            unset,
+            raw,
+            dxt1,
+            dxt3,
+            dxt5
+        }
     }
 }

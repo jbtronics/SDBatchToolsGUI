@@ -29,19 +29,7 @@ namespace SDBatchToolsHelper
             render
         }
 
-        public enum RenderOutputFormat
-        {
-            unset, dds, bmp, ico, jpg, jif, jpeg, jpe, png, tga, targa, tif, tiff, wap, wbmp, wbm, hdr, exr, jp2, webp, jxr, wdp, hdp
-        }
-
-        public enum DDSCompression
-        {
-            unset,
-            raw,
-            dxt1,
-            dxt3,
-            dxt5
-        }
+        
 
         //Fields
         private string _inputfile = "";
@@ -50,8 +38,8 @@ namespace SDBatchToolsHelper
         public Sbsrender()
         {
             Mode = SbsrenderModes.render;
-            Compression = DDSCompression.unset;
-            OutputFormat = RenderOutputFormat.unset;
+            Compression = Tools.DDSCompression.unset;
+            OutputFormat = Tools.RenderOutputFormat.unset;
         }
 
 
@@ -80,9 +68,9 @@ namespace SDBatchToolsHelper
             }
         }
 
-        public DDSCompression Compression { get; set; }
+        public Tools.DDSCompression Compression { get; set; }
 
-        public RenderOutputFormat OutputFormat { get; set; }
+        public Tools.RenderOutputFormat OutputFormat { get; set; }
 
         public int MemoryBudget { get; set; } = 1000;
 
@@ -134,10 +122,10 @@ namespace SDBatchToolsHelper
                 if (OutputPath != "")
                     s += " --output-path " + OutputPath;
 
-                if (OutputFormat != RenderOutputFormat.unset)
+                if (OutputFormat != Tools.RenderOutputFormat.unset)
                     s += " --output-format " + OutputFormat.ToString();
 
-                if (Compression != DDSCompression.unset && OutputFormat == RenderOutputFormat.dds)
+                if (Compression != Tools.DDSCompression.unset && OutputFormat == Tools.RenderOutputFormat.dds)
                     s += " --output-format-compression " + Compression.ToString();
 
                 if (SetValue != "")

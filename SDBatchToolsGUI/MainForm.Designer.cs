@@ -43,6 +43,21 @@
             this.creditsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tab_manager = new System.Windows.Forms.TabControl();
             this.tab_baker = new System.Windows.Forms.TabPage();
+            this.txt_baker_additional = new System.Windows.Forms.TextBox();
+            this.label42 = new System.Windows.Forms.Label();
+            this.txt_baker_tangent_space = new System.Windows.Forms.TextBox();
+            this.label41 = new System.Windows.Forms.Label();
+            this.txt_baker_output_name = new System.Windows.Forms.TextBox();
+            this.label40 = new System.Windows.Forms.Label();
+            this.btn_baker_output_path_select = new System.Windows.Forms.Button();
+            this.txt_baker_output_path = new System.Windows.Forms.TextBox();
+            this.label39 = new System.Windows.Forms.Label();
+            this.txt_baker_input_select = new System.Windows.Forms.TextBox();
+            this.label38 = new System.Windows.Forms.Label();
+            this.combo_baker_compression = new System.Windows.Forms.ComboBox();
+            this.label36 = new System.Windows.Forms.Label();
+            this.label37 = new System.Windows.Forms.Label();
+            this.combo_baker_fileformat = new System.Windows.Forms.ComboBox();
             this.btn_baker_input_select = new System.Windows.Forms.Button();
             this.txt_baker_input = new System.Windows.Forms.TextBox();
             this.label35 = new System.Windows.Forms.Label();
@@ -51,6 +66,8 @@
             this.btn_baker_help = new System.Windows.Forms.Button();
             this.btn_baker_version = new System.Windows.Forms.Button();
             this.tab_cooker = new System.Windows.Forms.TabPage();
+            this.txt_cooker_additional = new System.Windows.Forms.TextBox();
+            this.label43 = new System.Windows.Forms.Label();
             this.btn_cooker_includes_select = new System.Windows.Forms.Button();
             this.txt_cooker_includes = new System.Windows.Forms.TextBox();
             this.label23 = new System.Windows.Forms.Label();
@@ -152,6 +169,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txt_preview = new System.Windows.Forms.TextBox();
             this.btn_run = new System.Windows.Forms.Button();
+            this.txt_mutator_additional = new System.Windows.Forms.TextBox();
+            this.label44 = new System.Windows.Forms.Label();
+            this.txt_render_additional = new System.Windows.Forms.TextBox();
+            this.label45 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.tab_manager.SuspendLayout();
             this.tab_baker.SuspendLayout();
@@ -282,6 +303,21 @@
             // 
             // tab_baker
             // 
+            this.tab_baker.Controls.Add(this.txt_baker_additional);
+            this.tab_baker.Controls.Add(this.label42);
+            this.tab_baker.Controls.Add(this.txt_baker_tangent_space);
+            this.tab_baker.Controls.Add(this.label41);
+            this.tab_baker.Controls.Add(this.txt_baker_output_name);
+            this.tab_baker.Controls.Add(this.label40);
+            this.tab_baker.Controls.Add(this.btn_baker_output_path_select);
+            this.tab_baker.Controls.Add(this.txt_baker_output_path);
+            this.tab_baker.Controls.Add(this.label39);
+            this.tab_baker.Controls.Add(this.txt_baker_input_select);
+            this.tab_baker.Controls.Add(this.label38);
+            this.tab_baker.Controls.Add(this.combo_baker_compression);
+            this.tab_baker.Controls.Add(this.label36);
+            this.tab_baker.Controls.Add(this.label37);
+            this.tab_baker.Controls.Add(this.combo_baker_fileformat);
             this.tab_baker.Controls.Add(this.btn_baker_input_select);
             this.tab_baker.Controls.Add(this.txt_baker_input);
             this.tab_baker.Controls.Add(this.label35);
@@ -295,6 +331,179 @@
             this.tab_baker.TabIndex = 0;
             this.tab_baker.Text = "sbsbaker";
             this.tab_baker.UseVisualStyleBackColor = true;
+            // 
+            // txt_baker_additional
+            // 
+            this.txt_baker_additional.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_baker_additional.Location = new System.Drawing.Point(124, 247);
+            this.txt_baker_additional.Name = "txt_baker_additional";
+            this.txt_baker_additional.Size = new System.Drawing.Size(695, 20);
+            this.txt_baker_additional.TabIndex = 30;
+            this.txt_baker_additional.TextChanged += new System.EventHandler(this.txt_baker_additional_TextChanged);
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Location = new System.Drawing.Point(3, 250);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(112, 13);
+            this.label42.TabIndex = 29;
+            this.label42.Text = "Additional Parameters:";
+            // 
+            // txt_baker_tangent_space
+            // 
+            this.txt_baker_tangent_space.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_baker_tangent_space.Location = new System.Drawing.Point(271, 162);
+            this.txt_baker_tangent_space.Name = "txt_baker_tangent_space";
+            this.txt_baker_tangent_space.Size = new System.Drawing.Size(548, 20);
+            this.txt_baker_tangent_space.TabIndex = 28;
+            this.txt_baker_tangent_space.TextChanged += new System.EventHandler(this.txt_baker_tangent_space_TextChanged);
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.Location = new System.Drawing.Point(155, 165);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(113, 13);
+            this.label41.TabIndex = 27;
+            this.label41.Text = "Tangent space plugin:";
+            // 
+            // txt_baker_output_name
+            // 
+            this.txt_baker_output_name.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_baker_output_name.Location = new System.Drawing.Point(271, 90);
+            this.txt_baker_output_name.Name = "txt_baker_output_name";
+            this.txt_baker_output_name.Size = new System.Drawing.Size(548, 20);
+            this.txt_baker_output_name.TabIndex = 26;
+            this.txt_baker_output_name.TextChanged += new System.EventHandler(this.txt_baker_output_name_TextChanged);
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Location = new System.Drawing.Point(194, 93);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(71, 13);
+            this.label40.TabIndex = 25;
+            this.label40.Text = "Output name:";
+            // 
+            // btn_baker_output_path_select
+            // 
+            this.btn_baker_output_path_select.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_baker_output_path_select.Location = new System.Drawing.Point(787, 62);
+            this.btn_baker_output_path_select.Name = "btn_baker_output_path_select";
+            this.btn_baker_output_path_select.Size = new System.Drawing.Size(32, 20);
+            this.btn_baker_output_path_select.TabIndex = 24;
+            this.btn_baker_output_path_select.Text = "...";
+            this.btn_baker_output_path_select.UseVisualStyleBackColor = true;
+            this.btn_baker_output_path_select.Click += new System.EventHandler(this.btn_baker_output_path_select_Click);
+            // 
+            // txt_baker_output_path
+            // 
+            this.txt_baker_output_path.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_baker_output_path.Location = new System.Drawing.Point(271, 62);
+            this.txt_baker_output_path.Name = "txt_baker_output_path";
+            this.txt_baker_output_path.Size = new System.Drawing.Size(510, 20);
+            this.txt_baker_output_path.TabIndex = 23;
+            this.txt_baker_output_path.TextChanged += new System.EventHandler(this.txt_baker_output_path_TextChanged);
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Location = new System.Drawing.Point(202, 65);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(66, 13);
+            this.label39.TabIndex = 22;
+            this.label39.Text = "Output path:";
+            // 
+            // txt_baker_input_select
+            // 
+            this.txt_baker_input_select.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_baker_input_select.Location = new System.Drawing.Point(271, 36);
+            this.txt_baker_input_select.Name = "txt_baker_input_select";
+            this.txt_baker_input_select.Size = new System.Drawing.Size(548, 20);
+            this.txt_baker_input_select.TabIndex = 21;
+            this.txt_baker_input_select.TextChanged += new System.EventHandler(this.txt_baker_input_select_TextChanged);
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Location = new System.Drawing.Point(186, 39);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(79, 13);
+            this.label38.TabIndex = 20;
+            this.label38.Text = "Input selection:";
+            // 
+            // combo_baker_compression
+            // 
+            this.combo_baker_compression.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.combo_baker_compression.Enabled = false;
+            this.combo_baker_compression.Items.AddRange(new object[] {
+            "",
+            "raw",
+            "dxt1",
+            "dxt3",
+            "dxt5"});
+            this.combo_baker_compression.Location = new System.Drawing.Point(111, 128);
+            this.combo_baker_compression.Name = "combo_baker_compression";
+            this.combo_baker_compression.Size = new System.Drawing.Size(69, 21);
+            this.combo_baker_compression.TabIndex = 19;
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Location = new System.Drawing.Point(9, 131);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(95, 13);
+            this.label36.TabIndex = 18;
+            this.label36.Text = "DDS compression:";
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Location = new System.Drawing.Point(9, 97);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(55, 13);
+            this.label37.TabIndex = 17;
+            this.label37.Text = "Fileformat:";
+            this.label37.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // combo_baker_fileformat
+            // 
+            this.combo_baker_fileformat.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.combo_baker_fileformat.Items.AddRange(new object[] {
+            "",
+            "dds",
+            "bmp ",
+            "ico",
+            "jpg",
+            "jif ",
+            "jpeg",
+            "jpe",
+            "png",
+            "tga",
+            "targa ",
+            "tif",
+            "tiff",
+            "wap",
+            "wbmp",
+            "wbm",
+            "hdr",
+            "exr",
+            "jp2",
+            "webp",
+            "jxr",
+            "wdp",
+            "hdp"});
+            this.combo_baker_fileformat.Location = new System.Drawing.Point(70, 94);
+            this.combo_baker_fileformat.Name = "combo_baker_fileformat";
+            this.combo_baker_fileformat.Size = new System.Drawing.Size(110, 21);
+            this.combo_baker_fileformat.TabIndex = 16;
+            this.combo_baker_fileformat.SelectedIndexChanged += new System.EventHandler(this.combo_baker_fileformat_SelectedIndexChanged);
             // 
             // btn_baker_input_select
             // 
@@ -311,16 +520,16 @@
             // 
             this.txt_baker_input.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_baker_input.Location = new System.Drawing.Point(251, 9);
+            this.txt_baker_input.Location = new System.Drawing.Point(271, 9);
             this.txt_baker_input.Name = "txt_baker_input";
-            this.txt_baker_input.Size = new System.Drawing.Size(530, 20);
+            this.txt_baker_input.Size = new System.Drawing.Size(510, 20);
             this.txt_baker_input.TabIndex = 14;
             this.txt_baker_input.TextChanged += new System.EventHandler(this.txt_baker_input_TextChanged);
             // 
             // label35
             // 
             this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(182, 13);
+            this.label35.Location = new System.Drawing.Point(202, 12);
             this.label35.Name = "label35";
             this.label35.Size = new System.Drawing.Size(63, 13);
             this.label35.TabIndex = 13;
@@ -331,7 +540,7 @@
             this.group_baker_mode.Controls.Add(this.combo_baker_mode);
             this.group_baker_mode.Location = new System.Drawing.Point(7, 36);
             this.group_baker_mode.Name = "group_baker_mode";
-            this.group_baker_mode.Size = new System.Drawing.Size(155, 52);
+            this.group_baker_mode.Size = new System.Drawing.Size(173, 52);
             this.group_baker_mode.TabIndex = 2;
             this.group_baker_mode.TabStop = false;
             this.group_baker_mode.Text = "Mode";
@@ -357,15 +566,15 @@
             "world-space-direction"});
             this.combo_baker_mode.Location = new System.Drawing.Point(6, 19);
             this.combo_baker_mode.Name = "combo_baker_mode";
-            this.combo_baker_mode.Size = new System.Drawing.Size(142, 21);
+            this.combo_baker_mode.Size = new System.Drawing.Size(161, 21);
             this.combo_baker_mode.TabIndex = 0;
             this.combo_baker_mode.SelectedIndexChanged += new System.EventHandler(this.combo_baker_mode_SelectedIndexChanged);
             // 
             // btn_baker_help
             // 
-            this.btn_baker_help.Location = new System.Drawing.Point(87, 6);
+            this.btn_baker_help.Location = new System.Drawing.Point(94, 6);
             this.btn_baker_help.Name = "btn_baker_help";
-            this.btn_baker_help.Size = new System.Drawing.Size(75, 23);
+            this.btn_baker_help.Size = new System.Drawing.Size(86, 23);
             this.btn_baker_help.TabIndex = 1;
             this.btn_baker_help.Text = "Help";
             this.btn_baker_help.UseVisualStyleBackColor = true;
@@ -375,7 +584,7 @@
             // 
             this.btn_baker_version.Location = new System.Drawing.Point(6, 6);
             this.btn_baker_version.Name = "btn_baker_version";
-            this.btn_baker_version.Size = new System.Drawing.Size(75, 23);
+            this.btn_baker_version.Size = new System.Drawing.Size(82, 23);
             this.btn_baker_version.TabIndex = 0;
             this.btn_baker_version.Text = "Version";
             this.btn_baker_version.UseVisualStyleBackColor = true;
@@ -383,6 +592,8 @@
             // 
             // tab_cooker
             // 
+            this.tab_cooker.Controls.Add(this.txt_cooker_additional);
+            this.tab_cooker.Controls.Add(this.label43);
             this.tab_cooker.Controls.Add(this.btn_cooker_includes_select);
             this.tab_cooker.Controls.Add(this.txt_cooker_includes);
             this.tab_cooker.Controls.Add(this.label23);
@@ -413,6 +624,24 @@
             this.tab_cooker.TabIndex = 1;
             this.tab_cooker.Text = "sbscooker";
             this.tab_cooker.UseVisualStyleBackColor = true;
+            // 
+            // txt_cooker_additional
+            // 
+            this.txt_cooker_additional.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_cooker_additional.Location = new System.Drawing.Point(125, 247);
+            this.txt_cooker_additional.Name = "txt_cooker_additional";
+            this.txt_cooker_additional.Size = new System.Drawing.Size(695, 20);
+            this.txt_cooker_additional.TabIndex = 32;
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Location = new System.Drawing.Point(4, 250);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(112, 13);
+            this.label43.TabIndex = 31;
+            this.label43.Text = "Additional Parameters:";
             // 
             // btn_cooker_includes_select
             // 
@@ -651,6 +880,8 @@
             // 
             // tab_mutator
             // 
+            this.tab_mutator.Controls.Add(this.txt_mutator_additional);
+            this.tab_mutator.Controls.Add(this.label44);
             this.tab_mutator.Controls.Add(this.label34);
             this.tab_mutator.Controls.Add(this.txt_mutator_input_graph);
             this.tab_mutator.Controls.Add(this.txt_mutator_connect_input);
@@ -714,7 +945,7 @@
             // 
             this.txt_mutator_connect_input.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_mutator_connect_input.Location = new System.Drawing.Point(606, 233);
+            this.txt_mutator_connect_input.Location = new System.Drawing.Point(606, 216);
             this.txt_mutator_connect_input.Name = "txt_mutator_connect_input";
             this.txt_mutator_connect_input.Size = new System.Drawing.Size(214, 20);
             this.txt_mutator_connect_input.TabIndex = 53;
@@ -723,7 +954,7 @@
             // label33
             // 
             this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(524, 236);
+            this.label33.Location = new System.Drawing.Point(524, 219);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(76, 13);
             this.label33.TabIndex = 52;
@@ -731,7 +962,7 @@
             // 
             // txt_mutator_connect_image
             // 
-            this.txt_mutator_connect_image.Location = new System.Drawing.Point(252, 233);
+            this.txt_mutator_connect_image.Location = new System.Drawing.Point(252, 216);
             this.txt_mutator_connect_image.Name = "txt_mutator_connect_image";
             this.txt_mutator_connect_image.Size = new System.Drawing.Size(252, 20);
             this.txt_mutator_connect_image.TabIndex = 51;
@@ -740,7 +971,7 @@
             // label32
             // 
             this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(162, 236);
+            this.label32.Location = new System.Drawing.Point(162, 219);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(81, 13);
             this.label32.TabIndex = 50;
@@ -750,7 +981,7 @@
             // 
             this.txt_mutator_set_default.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_mutator_set_default.Location = new System.Drawing.Point(606, 200);
+            this.txt_mutator_set_default.Location = new System.Drawing.Point(606, 190);
             this.txt_mutator_set_default.Name = "txt_mutator_set_default";
             this.txt_mutator_set_default.Size = new System.Drawing.Size(214, 20);
             this.txt_mutator_set_default.TabIndex = 49;
@@ -759,7 +990,7 @@
             // label31
             // 
             this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(510, 203);
+            this.label31.Location = new System.Drawing.Point(510, 193);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(90, 13);
             this.label31.TabIndex = 48;
@@ -767,7 +998,7 @@
             // 
             // txt_mutator_switch_to_constant
             // 
-            this.txt_mutator_switch_to_constant.Location = new System.Drawing.Point(252, 200);
+            this.txt_mutator_switch_to_constant.Location = new System.Drawing.Point(252, 190);
             this.txt_mutator_switch_to_constant.Name = "txt_mutator_switch_to_constant";
             this.txt_mutator_switch_to_constant.Size = new System.Drawing.Size(252, 20);
             this.txt_mutator_switch_to_constant.TabIndex = 47;
@@ -776,7 +1007,7 @@
             // label27
             // 
             this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(149, 203);
+            this.label27.Location = new System.Drawing.Point(149, 193);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(98, 13);
             this.label27.TabIndex = 46;
@@ -1014,6 +1245,8 @@
             // 
             // tab_render
             // 
+            this.tab_render.Controls.Add(this.txt_render_additional);
+            this.tab_render.Controls.Add(this.label45);
             this.tab_render.Controls.Add(this.txt_render_values);
             this.tab_render.Controls.Add(this.label17);
             this.tab_render.Controls.Add(this.txt_render_pixel_size);
@@ -1538,6 +1771,42 @@
             this.btn_run.UseVisualStyleBackColor = true;
             this.btn_run.Click += new System.EventHandler(this.btn_run_Click);
             // 
+            // txt_mutator_additional
+            // 
+            this.txt_mutator_additional.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_mutator_additional.Location = new System.Drawing.Point(131, 247);
+            this.txt_mutator_additional.Name = "txt_mutator_additional";
+            this.txt_mutator_additional.Size = new System.Drawing.Size(695, 20);
+            this.txt_mutator_additional.TabIndex = 57;
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.Location = new System.Drawing.Point(10, 250);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(112, 13);
+            this.label44.TabIndex = 56;
+            this.label44.Text = "Additional Parameters:";
+            // 
+            // txt_render_additional
+            // 
+            this.txt_render_additional.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_render_additional.Location = new System.Drawing.Point(312, 247);
+            this.txt_render_additional.Name = "txt_render_additional";
+            this.txt_render_additional.Size = new System.Drawing.Size(511, 20);
+            this.txt_render_additional.TabIndex = 40;
+            // 
+            // label45
+            // 
+            this.label45.AutoSize = true;
+            this.label45.Location = new System.Drawing.Point(194, 250);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(112, 13);
+            this.label45.TabIndex = 39;
+            this.label45.Text = "Additional Parameters:";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1701,6 +1970,27 @@
         private System.Windows.Forms.Button btn_baker_input_select;
         private System.Windows.Forms.TextBox txt_baker_input;
         private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.ComboBox combo_baker_compression;
+        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.ComboBox combo_baker_fileformat;
+        private System.Windows.Forms.TextBox txt_baker_input_select;
+        private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.Button btn_baker_output_path_select;
+        private System.Windows.Forms.TextBox txt_baker_output_path;
+        private System.Windows.Forms.Label label39;
+        private System.Windows.Forms.TextBox txt_baker_output_name;
+        private System.Windows.Forms.Label label40;
+        private System.Windows.Forms.TextBox txt_baker_tangent_space;
+        private System.Windows.Forms.Label label41;
+        private System.Windows.Forms.TextBox txt_baker_additional;
+        private System.Windows.Forms.Label label42;
+        private System.Windows.Forms.TextBox txt_cooker_additional;
+        private System.Windows.Forms.Label label43;
+        private System.Windows.Forms.TextBox txt_mutator_additional;
+        private System.Windows.Forms.Label label44;
+        private System.Windows.Forms.TextBox txt_render_additional;
+        private System.Windows.Forms.Label label45;
     }
 }
 

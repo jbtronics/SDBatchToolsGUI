@@ -49,6 +49,13 @@ namespace SDBatchToolsHelper
         }
 
         public Modes Mode { get; set; }
+        public Tools.DDSCompression DDSCompression { get; set; } = Tools.DDSCompression.unset;
+        public Tools.RenderOutputFormat OutputFormat { get; set; } = Tools.RenderOutputFormat.unset;
+
+        public string TangentSpacePlugin { get; set; } = "";
+        public string OutputName { get; set; } = "";
+        public string InputSelection { get; set; } = "";
+        public string AdditionalParams { get; set; } = "";
 
         public string InputMesh {
             get
@@ -77,6 +84,32 @@ namespace SDBatchToolsHelper
         {
             String s = getToolname();
 
+            s += " " + Tools.formatMode(Mode.ToString());
+
+            if (InputMesh != "")
+                s += " --inputs " + InputMesh;
+
+            if (InputSelection != "")
+                s += " --input-selection " + InputSelection;
+
+            if (OutputName != "")
+                s += " --output-name " + OutputName;
+
+            if (OutputPath != "")
+                s += " --output-path " + OutputPath;
+
+            if (OutputFormat != Tools.RenderOutputFormat.unset)
+                s += " --output-format " + OutputFormat;
+
+            if (DDSCompression != Tools.DDSCompression.unset && OutputFormat == Tools.RenderOutputFormat.dds)
+                s += " --output-format-compression " + DDSCompression;
+
+            if (TangentSpacePlugin != "")
+                s += " --tangent-space-plugin " + TangentSpacePlugin;
+
+            if (AdditionalParams != "")
+                s += " " + AdditionalParams;
+
             return s.Trim();
         }
 
@@ -96,7 +129,11 @@ namespace SDBatchToolsHelper
 
         public string getHelpCmd()
         {
-            return getToolname() + "--help";
+            var s = getToolname() + "--help";
+
+            s += " " + Tools.formatMode(Mode.ToString());
+
+            return s;
         }
 
     }

@@ -62,7 +62,7 @@ namespace SDBatchToolsGUI
 
         private void tab_manager_Selected(object sender, TabControlEventArgs e)
         {
-            switch(e.TabPage.Text)
+            switch (e.TabPage.Text)
             {
                 case "sbsrender":
                     updateCMDLine(_sbsrender);
@@ -78,7 +78,7 @@ namespace SDBatchToolsGUI
                     break;
             }
         }
-        
+
 
         #region Preview Line
         private void txt_preview_KeyDown(object sender, KeyEventArgs e)
@@ -156,7 +156,7 @@ namespace SDBatchToolsGUI
                 _proc = proc;
 
                 //Add infos on Output start
-                if(Properties.Settings.Default.output_info)
+                if (Properties.Settings.Default.output_info)
                 {
                     txt_output.Text += "Command: " + cmd + "\r\n";
                     txt_output.Text += "Started on " + DateTime.Now.ToString() + "\r\n";
@@ -222,59 +222,59 @@ namespace SDBatchToolsGUI
         {
             int i = combo_baker_mode.SelectedIndex;
 
-            if(i==0)
+            if (i == 0)
             {
                 _sbsbaker.Mode = Sbsbaker.Modes.ambient_occlusion;
             }
-            else if(i==1)
+            else if (i == 1)
             {
                 _sbsbaker.Mode = Sbsbaker.Modes.ambient_occlusion_from_mesh;
             }
-            else if(i==2)
+            else if (i == 2)
             {
                 _sbsbaker.Mode = Sbsbaker.Modes.bent_normal_from_mesh;
             }
-            else if(i==3)
+            else if (i == 3)
             {
                 _sbsbaker.Mode = Sbsbaker.Modes.color_from_mesh;
             }
-            else if(i==4)
+            else if (i == 4)
             {
                 _sbsbaker.Mode = Sbsbaker.Modes.curvature;
             }
-            else if(i==5)
+            else if (i == 5)
             {
                 _sbsbaker.Mode = Sbsbaker.Modes.height_from_mesh;
             }
-            else if(i==6)
+            else if (i == 6)
             {
                 _sbsbaker.Mode = Sbsbaker.Modes.normal_from_mesh;
             }
-            else if(i==7)
+            else if (i == 7)
             {
                 _sbsbaker.Mode = Sbsbaker.Modes.normal_world_space;
             }
-            else if(i==8)
+            else if (i == 8)
             {
                 _sbsbaker.Mode = Sbsbaker.Modes.opacity_mask_from_mesh;
             }
-            else if(i==9)
+            else if (i == 9)
             {
                 _sbsbaker.Mode = Sbsbaker.Modes.position;
             }
-            else if(i==10)
+            else if (i == 10)
             {
                 _sbsbaker.Mode = Sbsbaker.Modes.texture_from_mesh;
             }
-            else if(i==11)
+            else if (i == 11)
             {
                 _sbsbaker.Mode = Sbsbaker.Modes.thickness_from_mesh;
             }
-            else if(i==12)
+            else if (i == 12)
             {
                 _sbsbaker.Mode = Sbsbaker.Modes.uv_map;
             }
-            else if(i==13)
+            else if (i == 13)
             {
                 _sbsbaker.Mode = Sbsbaker.Modes.world_space_direction;
             }
@@ -306,6 +306,80 @@ namespace SDBatchToolsGUI
             }
         }
 
+        private void combo_baker_fileformat_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                _sbsbaker.OutputFormat = (Tools.RenderOutputFormat)combo_baker_fileformat.SelectedIndex;
+            }
+            catch (Exception) { }
+
+
+            if (_sbsbaker.OutputFormat == Tools.RenderOutputFormat.dds)
+            {
+                combo_baker_compression.Enabled = true;
+            }
+            else
+            {
+                combo_baker_compression.Enabled = false;
+            }
+
+            updateCMDLine(_sbsbaker);
+        }
+
+        private void combo_baker_compression_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                _sbsbaker.DDSCompression = (Tools.DDSCompression)combo_baker_compression.SelectedIndex;
+            }
+            catch (Exception) { }
+
+            updateCMDLine(_sbsbaker);
+        }
+
+        private void txt_baker_additional_TextChanged(object sender, EventArgs e)
+        {
+            _sbsbaker.AdditionalParams = txt_baker_additional.Text;
+            updateCMDLine(_sbsbaker);
+        }
+
+        private void txt_baker_input_select_TextChanged(object sender, EventArgs e)
+        {
+            _sbsbaker.InputSelection = txt_baker_input_select.Text;
+            updateCMDLine(_sbsbaker);
+        }
+
+        private void txt_baker_output_path_TextChanged(object sender, EventArgs e)
+        {
+            _sbsbaker.OutputPath = txt_baker_output_path.Text;
+            updateCMDLine(_sbsbaker);
+        }
+
+        private void txt_baker_output_name_TextChanged(object sender, EventArgs e)
+        {
+            _sbsbaker.OutputName = txt_baker_output_name.Text;
+            updateCMDLine(_sbsbaker);
+        }
+
+        private void txt_baker_tangent_space_TextChanged(object sender, EventArgs e)
+        {
+            _sbsbaker.TangentSpacePlugin = txt_baker_tangent_space.Text;
+            updateCMDLine(_sbsbaker);
+        }
+
+        private void btn_baker_output_path_select_Click(object sender, EventArgs e)
+        {
+            FolderBrowserDialog fbd = new FolderBrowserDialog();
+            fbd.ShowNewFolderButton = true;
+            if (fbd.ShowDialog() == DialogResult.OK)
+            {
+                txt_baker_output_path.Text = fbd.SelectedPath;
+                _sbsbaker.OutputPath = fbd.SelectedPath;
+
+                updateCMDLine(_sbsbaker);
+            }
+        }
         #endregion
 
         #region sbscooker
@@ -425,7 +499,7 @@ namespace SDBatchToolsGUI
             fbd.ShowNewFolderButton = true;
             if (fbd.ShowDialog() == DialogResult.OK)
             {
-                txt_cooker_includes.Text = Tools.formatPath( fbd.SelectedPath);
+                txt_cooker_includes.Text = Tools.formatPath(fbd.SelectedPath);
             }
         }
 
@@ -445,7 +519,7 @@ namespace SDBatchToolsGUI
 
         private void combo_mutator_mode_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(combo_mutator_mode.SelectedIndex==0)
+            if (combo_mutator_mode.SelectedIndex == 0)
             {
                 _sbsmutator.Mode = Sbsmutator.Modes.graph_parameters_editor;
 
@@ -465,7 +539,7 @@ namespace SDBatchToolsGUI
                 txt_mutator_input_graph.Enabled = true;
             }
 
-            else if(combo_mutator_mode.SelectedIndex==1)
+            else if (combo_mutator_mode.SelectedIndex == 1)
             {
                 _sbsmutator.Mode = Sbsmutator.Modes.info;
 
@@ -485,7 +559,7 @@ namespace SDBatchToolsGUI
                 txt_mutator_input_graph.Enabled = false;
             }
 
-            else if(combo_mutator_mode.SelectedIndex==2)
+            else if (combo_mutator_mode.SelectedIndex == 2)
             {
                 _sbsmutator.Mode = Sbsmutator.Modes.specialization;
 
@@ -505,7 +579,7 @@ namespace SDBatchToolsGUI
                 txt_mutator_input_graph.Enabled = true;
             }
 
-            else if(combo_mutator_mode.SelectedIndex==3)
+            else if (combo_mutator_mode.SelectedIndex == 3)
             {
                 _sbsmutator.Mode = Sbsmutator.Modes.update;
 
@@ -524,10 +598,10 @@ namespace SDBatchToolsGUI
                 txt_mutator_switch_to_constant.Enabled = false;
                 txt_mutator_input_graph.Enabled = false;
             }
-               
-           updateCMDLine(_sbsmutator);
-            
-           
+
+            updateCMDLine(_sbsmutator);
+
+
         }
 
         private void check_mutator_hide_params_CheckedChanged(object sender, EventArgs e)
@@ -662,7 +736,7 @@ namespace SDBatchToolsGUI
                 txt_render_input.Text = openFileDialog1.FileName;
                 _sbsrender.InputFile = openFileDialog1.FileName;
 
-                if(_sbsrender.OutputPath=="")
+                if (_sbsrender.OutputPath == "")
                 {
                     _sbsrender.OutputPath = System.IO.Path.GetDirectoryName(openFileDialog1.FileName);
                 }
@@ -670,7 +744,7 @@ namespace SDBatchToolsGUI
                 updateCMDLine(_sbsrender);
             }
 
-       }
+        }
 
         private void numeric_render_budget_ValueChanged(object sender, EventArgs e)
         {
@@ -682,7 +756,7 @@ namespace SDBatchToolsGUI
         {
             FolderBrowserDialog fbd = new FolderBrowserDialog();
             fbd.ShowNewFolderButton = true;
-            if(fbd.ShowDialog() == DialogResult.OK)
+            if (fbd.ShowDialog() == DialogResult.OK)
             {
                 txt_render_output.Text = fbd.SelectedPath;
                 _sbsrender.OutputPath = fbd.SelectedPath;
@@ -693,40 +767,40 @@ namespace SDBatchToolsGUI
 
         private void combo_render_fileformat_SelectedValueChanged(object sender, EventArgs e)
         {
-            Sbsrender.RenderOutputFormat format;
+            Tools.RenderOutputFormat format;
 
             try
             {
-                format = (Sbsrender.RenderOutputFormat)combo_render_fileformat.SelectedIndex;
+                format = (Tools.RenderOutputFormat)combo_render_fileformat.SelectedIndex;
             }
             catch (Exception)
             {
-                format = Sbsrender.RenderOutputFormat.unset;
+                format = Tools.RenderOutputFormat.unset;
             }
 
             _sbsrender.OutputFormat = format;
             updateCMDLine(_sbsrender);
 
 
-            if (_sbsrender.OutputFormat == Sbsrender.RenderOutputFormat.dds)
+            if (_sbsrender.OutputFormat == Tools.RenderOutputFormat.dds)
                 combo_render_compression.Enabled = true;
             else
                 combo_render_compression.Enabled = false;
 
-        }   
-            
+        }
+
 
         private void combo_render_compression_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Sbsrender.DDSCompression format;
+            Tools.DDSCompression format;
 
             try
             {
-                format = (Sbsrender.DDSCompression)combo_render_compression.SelectedIndex;
+                format = (Tools.DDSCompression)combo_render_compression.SelectedIndex;
             }
             catch (Exception)
             {
-                format = Sbsrender.DDSCompression.unset;
+                format = Tools.DDSCompression.unset;
             }
 
             _sbsrender.Compression = format;
@@ -748,7 +822,7 @@ namespace SDBatchToolsGUI
         private void btn_render_output_name_build_Click(object sender, EventArgs e)
         {
             var builder = new OutputNameBuilder();
-            if(builder.ShowDialog() == DialogResult.OK)
+            if (builder.ShowDialog() == DialogResult.OK)
             {
                 txt_render_output_name.Text = builder.Result;
                 _sbsrender.OutputName = builder.Result;
@@ -935,7 +1009,7 @@ namespace SDBatchToolsGUI
             {
                 _proc.Kill();
             }
-            catch (Exception ) { }
+            catch (Exception) { }
 
         }
 
@@ -973,11 +1047,14 @@ namespace SDBatchToolsGUI
                     }
                     break;
                 case "sbsbaker":
-
+                    if(_sbsbaker.OutputPath !="")
+                    {
+                        Process.Start("explorer.exe", _sbsbaker.OutputPath);
+                    }
                     break;
             }
 
-            
+
         }
 
 
@@ -989,17 +1066,9 @@ namespace SDBatchToolsGUI
 
 
 
-
-
-
-
-
-
-
-
-
         #endregion
 
         
     }
+
 }
