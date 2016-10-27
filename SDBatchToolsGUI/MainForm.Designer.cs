@@ -336,9 +336,9 @@
             // 
             this.txt_baker_additional.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_baker_additional.Location = new System.Drawing.Point(124, 247);
+            this.txt_baker_additional.Location = new System.Drawing.Point(121, 247);
             this.txt_baker_additional.Name = "txt_baker_additional";
-            this.txt_baker_additional.Size = new System.Drawing.Size(695, 20);
+            this.txt_baker_additional.Size = new System.Drawing.Size(698, 20);
             this.txt_baker_additional.TabIndex = 30;
             this.txt_baker_additional.TextChanged += new System.EventHandler(this.txt_baker_additional_TextChanged);
             // 
@@ -638,7 +638,7 @@
             // label43
             // 
             this.label43.AutoSize = true;
-            this.label43.Location = new System.Drawing.Point(4, 250);
+            this.label43.Location = new System.Drawing.Point(3, 250);
             this.label43.Name = "label43";
             this.label43.Size = new System.Drawing.Size(112, 13);
             this.label43.TabIndex = 31;
@@ -1776,16 +1776,16 @@
             // 
             this.txt_mutator_additional.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_mutator_additional.Location = new System.Drawing.Point(131, 247);
+            this.txt_mutator_additional.Location = new System.Drawing.Point(121, 247);
             this.txt_mutator_additional.Name = "txt_mutator_additional";
-            this.txt_mutator_additional.Size = new System.Drawing.Size(695, 20);
+            this.txt_mutator_additional.Size = new System.Drawing.Size(705, 20);
             this.txt_mutator_additional.TabIndex = 57;
             this.txt_mutator_additional.TextChanged += new System.EventHandler(this.txt_mutator_additional_TextChanged);
             // 
             // label44
             // 
             this.label44.AutoSize = true;
-            this.label44.Location = new System.Drawing.Point(10, 250);
+            this.label44.Location = new System.Drawing.Point(3, 250);
             this.label44.Name = "label44";
             this.label44.Size = new System.Drawing.Size(112, 13);
             this.label44.TabIndex = 56;
