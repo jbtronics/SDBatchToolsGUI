@@ -118,9 +118,6 @@ namespace SDBatchToolsHelper
 
                 if (SetDefaultValue != "")
                     s += " --set-default-value " + SetDefaultValue;
-
-                if (AdditionalParams != "")
-                    s += " " + AdditionalParams;
             }
 
             else if (Mode == Modes.info)
@@ -191,6 +188,9 @@ namespace SDBatchToolsHelper
                 if (NoDependency)
                     s += " --no-dependency";
             }
+
+            if (AdditionalParams != "")
+                s += " " + AdditionalParams;
 
             return s.Trim();
         }
