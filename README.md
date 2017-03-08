@@ -17,6 +17,9 @@ Download Release.zip from Releases Tab and unpack it. Start the SDBatchToolsGUI.
 
 If you want the tool installed on you system (with start menu entry etc.), then download Setup.zip, unpack and run setup.exe. This will download all dependencys (.NET 4.6) if not installed on your system and install the tool.
 
+## Troubleshoot
+If you get a message like "The system cannot get the file specified at...", then you have to set the option "Path to BatchTools" under Settings, so that it points to the folder, where the .exe files of the Batch Tools are.
+
 ## Screenshots
 
 ![alt text](https://github.com/do9jhb/SDBatchToolsGUI/raw/master/img/sbsbaker.png "sbsbaker")
